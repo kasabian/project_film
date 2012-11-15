@@ -1,0 +1,26 @@
+
+<%= form_for(object) do |f| %>
+  <% if object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(object.errors.count, "error") %> prohibited this announcement from being saved:</h2>
+
+      <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'имя' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'основной текст' %><br />
+    <%= f.text_area :content, :size => "100x25" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Готово' %>
+  </div>
+<% end %>
