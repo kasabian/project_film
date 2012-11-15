@@ -563,4 +563,27 @@ background: url(/images/bg.gif) repeat-x left bottom;
   font-size:15px;
 }
 
+.post_box{
+    margin-bottom:20px;
+    /*border-bottom: 1px dashed gray; */
+    margin-top: 5px;
+    padding: 10px;
+ }
+ .post_box_menu{
+    border-right: 1px dashed gray;
+    float: left;
+    margin-right: 30px;
+    padding-right: 30px;
+ }
+ .post_box_name {
+    color: red;
+    font-size: 20px;
+    padding: 10px;
+ }
+ 
+ .post_box_content{
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size: 14px;
+ }
 /* end of menu */	

@@ -1,10 +1,11 @@
 ProjectFilm::Application.routes.draw do
-  resources :posts
+ 
+  resources :news
+
+  resources :announcements
 
   get "search/index"
-
   get "cartoons/index"
-
   get "kinofilms/index"
 
   

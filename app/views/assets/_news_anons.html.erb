@@ -1,0 +1,21 @@
+
+<% objects.each do |object| %>
+  <div class = "post_box">
+    <div class = "post_box_name">
+     <%= object.name %>
+    </div>
+    <div class = "post_box_content">
+     <%= object.content %>
+    </div>
+    <div>
+        <div class = "post_box_menu">
+         <%= link_to 'Удалить', object, method: :delete, data: { confirm: 'Вы уверены?' } %>
+       </div>
+       <div>
+        <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %>
+       </div>
+    </div>
+    
+ </div>
+ 
+<% end %>
