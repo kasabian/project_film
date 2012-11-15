@@ -1,0 +1,47 @@
+<div class="product_detail_cont">
+      <div class="product_detail_left"><%= image_tag(@film.image) %></div>
+     <div >
+       <p>
+            <b>Название фильма:</b>
+            <%= @film.name %>
+      </p> <br />
+       <p>
+            <b>Жанр:</b>
+            <%= join_janrs(@film) %>
+      </p> <br />
+       <p>
+            <b>Год выпуска:</b>
+            <%= @film.year %>
+      </p> <br />
+      <p>
+            <b>Страна:</b>
+            <%= @film.country %>
+      </p> <br />
+      <p>
+            <b>Режиссер:</b>
+            <%= @film.directed_by %>
+      </p> <br />
+        <p>
+            <b>Главные роли:</b>
+             <%= @film.role %>
+        </p> <br />
+        <p>
+            <b>Продолжительность:</b>
+             <%= @film.length %>
+        </p> <br /><br />
+        
+        <p>
+            <b>Описание:</b>
+            <%= @film.introtext %>
+       </p> <br />
+     </div> 
+</div>
+
+<div style = "height:400px;">
+  <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
+</div>
+
+<%= link_to 'Редактировать фильм', edit_film_path(@film) %> <br />
+
+
+<%= render "comments/comments", :film => @film %>

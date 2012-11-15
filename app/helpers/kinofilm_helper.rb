@@ -1,0 +1,2 @@
+module KinofilmHelper
+end

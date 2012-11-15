@@ -1,0 +1,5 @@
+ <div class = "janr">
+  <% Janr.all.each do |janr| %>
+    <h1> <%= link_to janr.name,"?janr=#{janr.id}"%> </h1>
+  <%end%>
+ </div> 

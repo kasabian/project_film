@@ -1,0 +1,15 @@
+<h2><%= flash[:notice]%></h2>
+    <% films.each do |film| %>
+       <div class="product_box margin_r_10">
+          <%= link_to image_tag(film.image), "/films/#{film.id}" + ".html" %>
+          
+          <br /><strong><%=film.name%> </strong><br />
+          <%= film.year %>,<%= film.country %><br />
+        
+        </div>
+     <% end %>
+     <div class="cleaner_h20"></div>
+    
+       <%= link_to 'Добавить', new_film_path %>
+
+    <div class="cleaner"></div>
