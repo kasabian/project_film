@@ -1,0 +1,18 @@
+<h1>Редактировать профиль</h1>
+
+   <%= form_for(@user) do |f| %>
+         
+         <%= image_tag(@user.avatar_url) if @user.avatar? %> <br /> <br />
+         <%= f.label 'вебрать изображение' %><br />
+         <%= f.file_field :avatar, :length => 5 %>
+         <%= f.hidden_field :avatar_cache %> 
+   
+         <div class="field">
+          <%= f.label 'ник' %><br />
+          <%= f.text_field :username %>
+         </div>
+         
+         <div class="actions">
+           <%= f.submit 'Готово' %>
+        </div>
+  <%end %>

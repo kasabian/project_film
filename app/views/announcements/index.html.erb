@@ -1,5 +1,7 @@
 <h1>Анонсы</h1>
 
 <%= render "assets/news_anons", :objects => @announcements, :name_cont => "announcements"%>
-
-<%= link_to 'Создать анонс', new_announcement_path %>
+<%= render "assets/pagination", :films =>  @announcements%>
+<%if can? :create,@announcements%>
+ <%= link_to 'Создать анонс', new_announcement_path %>
+<%end%>

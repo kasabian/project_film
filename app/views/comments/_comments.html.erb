@@ -5,10 +5,10 @@
 
   <div class="comment_box">
     <div class="c_image_box">
-      <%=image_tag ("/comment.jpg")%>
+      <%=image_tag(comment.user.avatar.smal_avatar.url)%>
     </div>
     <div class = "c_other_box">
-      <strong> Вася пупкин </strong>
+      <strong> <%= comment.user.username %> </strong>
     </div>
     <div class = "c_other_box">
       <%= comment.content %>
@@ -16,19 +16,23 @@
     
      <div style= "width:800px;">
          <div class="c_delete_box">
-            <%= link_to 'Удалить коментарий', [comment.film, comment],
+         <% if can? :destroy, comment %> 
+         <%= link_to 'Удалить коментарий', [comment.film, comment],
                :confirm => 'Вы уверены?',
                :method => :delete %>
+            <%end%>
             </div>
-         <div class="c_data_box">
+        
+        <div class="c_data_box">
            отправлен: <%= comment.created_at %>
          </div>
      </div>
  </div> 
   
   <% end %>
+  
  
- 
+ <% if can? :create, Comment then%>
  <%= form_for([film, film.comments.build]) do |f| %>
   <div class="field">
     <%= f.label 'Добавить коментарий' %><br />
@@ -40,3 +44,6 @@
  <% end %>
 
 </div>
+<%else%>
+ <h1 style = "color:brown;"> Что бы иметь возможность отправлять комментарии нужно войти как зарегистрированный пользователь! </h1><br />
+<%end%>
