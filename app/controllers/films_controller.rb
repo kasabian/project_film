@@ -14,8 +14,8 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
-    @film = Film.find(params[:id])
-
+    @film = Film.find_by_frendlyname(params[:frendlyname])
+    @film = Film.find(params[:frendlyname]) if @film == nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @film }

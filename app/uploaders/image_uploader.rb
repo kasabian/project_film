@@ -39,7 +39,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    end
   
    version :smal_image do
-    process :resize_to_fill => [210,250]
+    process :resize_to_fill => [150,190]
    end
    
    version :smal_avatar do

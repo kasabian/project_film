@@ -47,3 +47,12 @@
 
   <%= render "comments/comments", :film => @film %>
   
+  
+  
+  <% content_for :keywords do %>
+   <%= @film.tag%>
+  <% end %>
+  
+  <% content_for :name do %>
+      <%= @film.name%>
+  <% end %>

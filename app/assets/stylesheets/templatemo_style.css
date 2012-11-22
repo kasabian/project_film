@@ -556,12 +556,23 @@ background: url(/images/bg.gif) repeat-x left bottom;
     z-index: 100;  
 }
 .janr{
-  text-align:center;
+    border: 1px dashed brown;
+    margin-top: 20px;
+    min-height: 42px;
+    text-align: center;
+}
+
+.janr div
+{
+    position: relative;
+    text-align: right;
+    width: 185px;
 }
 .janr h1{
   float:left;
   margin-left:10px;
   font-size:15px;
+  
 }
 
 .post_box{

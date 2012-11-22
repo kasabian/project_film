@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119132251) do
+ActiveRecord::Schema.define(:version => 20121122100222) do
 
   create_table "announcements", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20121119132251) do
     t.string   "directed_by"
     t.string   "length"
     t.string   "country"
+    t.string   "tag"
+    t.string   "frendlyname"
   end
 
   create_table "films_janrs", :id => false, :force => true do |t|

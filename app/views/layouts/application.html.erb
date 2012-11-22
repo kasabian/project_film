@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Онлайн кинотеатр</title>
-<meta name="keywords" content="showcase, portfolio, free web templates, css templates" />
+<title><%= yield  :name%> Онлайн кинотевтр</title>
+<meta name="keywords" content="<%= yield :keywords%>" />
 <meta name="description" content="Онлайн кинотеатр" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -56,24 +56,16 @@
 
 <div id="templatemo_footer_wrapper">
     <div id="templatemo_footer">
-    
         <div class="section_w220">
-        
-          
         </div>
-        
+       
         <div class="section_w220">
-        
-            
-        
         </div>
             
         <div class="section_w220">
-        
-            
         </div>
         
-		<div class="section_w220">
+    	<div class="section_w220">
         
             <h4>Сайт кинотеатр</h4>
             
