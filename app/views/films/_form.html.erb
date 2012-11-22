@@ -1,14 +1,12 @@
  <% @film.janr =  join_janrs(@film) %>
- <%= type = @film.type.name.to_sym if @film.type != nil%>
+  <%= type = @film.type.name.to_sym if @film.type != nil%>
  <%= form_for(@film) do |f| %> 
   <% if @film.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
-
-      <ul>
-      <% @film.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+       <ul>
+     
+        <li>Ошибка заолнения формы</li>
+   
       </ul>
     </div>
   <% end %>
@@ -17,7 +15,7 @@
     <%= f.label 'Тип контента' %><br />
     <%= select(:film, :film_type, options_for_select([["Фильм", 'films'], ["Мультфильм", 'cartoons']], type)) %>
   </div> <br />
-  
+
   
    <%= image_tag(@film.image_url) if @film.image? %> <br /> <br />
          <%= f.label 'вебрать изображение' %><br />
@@ -28,10 +26,28 @@
     <%= f.label 'Название' %><br />
     <%= f.text_field :name %>
   </div>
-   
+  
   <div class="field">
-    <%= f.label 'Жанр' %><br />
-    <%= f.text_field :janr %>
+    <%= f.label 'Теги' %><br />
+    <%= f.text_field :tag %>
+  </div>
+  
+   <div class="field">
+    <%= f.label 'латинское имя для url' %><br />
+    <%= f.text_field :frendlyname %>
+  </div>
+   
+  <div class = "field">
+   <%= label_tag("Жанры") %> <br />
+    <%Janr.all.each do |janr|%>
+       <%= if @film.janrs.include? janr then
+             check_box_tag(janr.id,janr.id,"checked")
+           else 
+             check_box_tag(janr.id,janr.id)
+           end
+       %>
+       <%= label_tag(janr.id,janr.name) %> <br />
+    <%end%>
   </div>
   
   <div class="field">
@@ -64,6 +80,7 @@
     <%= f.label 'Сылка на фильм' %><br />
     <%= f.text_area :film %>
   </div><br /> 
+
   <div class="actions">
     <%= f.submit "Применить" %>
   </div>

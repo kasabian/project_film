@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Онлайн кинотеатр</title>
-<meta name="keywords" content="showcase, portfolio, free web templates, css templates" />
+<title><%= yield  :name%> Онлайн кинотевтр</title>
+<meta name="keywords" content="<%= yield :keywords%>" />
 <meta name="description" content="Онлайн кинотеатр" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -12,16 +12,11 @@
 <body>
 <div id="templatemo_menu_menu">  
   <div class="con">
-     <ul id="topnav" class="v1">
-        <li><%=link_to 'Главная', films_path %></li>
-        <li><%=link_to 'Фильмы', kinofilms_index_path %></li>
-        <li><%=link_to 'Мультфильмы', cartoons_index_path %></li>
-        <li><%=link_to 'Анонсы', announcements_path %></li>
-        <li><%=link_to 'Новости', news_index_path %></li>
-        <li><%=link_to 'Войти', "/#" %></li>
-    </ul>
+     <%= render "assets/links"%>
   </div>
- 
+    <% if user_signed_in? %>
+       <span class = "log_in"> привет: <%= current_user.username %> </span>
+     <%end%>
  </div> <!-- end of menu -->
  <div class="slider_nivo_wrapper">
   <div class="slider_nivo_">
@@ -43,31 +38,34 @@
 
 </div> <!-- end of templatemo_menu_wrapper -->
 
- <div id="templatemo_content">
+ <div id ="vidget">
+   <script type="text/javascript" src="//vk.com/js/api/openapi.js?64"></script>
+
+   <!-- VK Widget -->
+    <div id="vk_groups"></div>
+    <script type="text/javascript">
+      VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "400"}, 37615869);
+    </script>
+ 
+ </div>
+
+<div id="templatemo_content">
 	<%= yield %>
  </div> <!-- end of templatemo_content -->
 <div id="templatemo_content_bottom"></div>
 
 <div id="templatemo_footer_wrapper">
     <div id="templatemo_footer">
-    
         <div class="section_w220">
-        
-          
         </div>
-        
+       
         <div class="section_w220">
-        
-            
-        
         </div>
             
         <div class="section_w220">
-        
-            
         </div>
         
-		<div class="section_w220">
+    	<div class="section_w220">
         
             <h4>Сайт кинотеатр</h4>
             

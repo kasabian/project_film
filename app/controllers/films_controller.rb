@@ -1,4 +1,5 @@
 class FilmsController < ApplicationController
+ load_and_authorize_resource
   # GET /films
   # GET /films.json
   def index
@@ -13,8 +14,8 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
-    @film = Film.find(params[:id])
-
+    @film = Film.find_by_frendlyname(params[:frendlyname])
+    @film = Film.find(params[:frendlyname]) if @film == nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @film }
@@ -42,7 +43,7 @@ class FilmsController < ApplicationController
   def create
     @film = Film.new(params[:film])
     @type = Type.find_by_name(params[:film][:film_type].to_s)
-    @film.create_janr params[:film][:janr].to_s 
+    @film.check_janr params
     @film.type_id = @type.id 
     respond_to do |format|
       if @film.save
@@ -61,7 +62,7 @@ class FilmsController < ApplicationController
     @type = Type.find_by_name(params[:film][:film_type].to_s) 
     @film = Film.find(params[:id])
     @film.type_id = @type.id 
-    @film.create_janr params[:film][:janr].to_s 
+    @film.check_janr params
     respond_to do |format|
       if @film.update_attributes(params[:film])
         format.html { redirect_to @film, notice: 'Film was successfully updated.' }
