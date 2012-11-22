@@ -41,7 +41,9 @@
   <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
 </div>
 
-<%= link_to 'Редактировать фильм', edit_film_path(@film) %> <br />
+ <%if can? :update, @film%>
+ <%= link_to 'Редактировать фильм', edit_film_path(@film) %> 
+ <%end%>
 
-
-<%= render "comments/comments", :film => @film %>
+  <%= render "comments/comments", :film => @film %>
+  

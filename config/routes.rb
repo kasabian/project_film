@@ -1,5 +1,13 @@
 ProjectFilm::Application.routes.draw do
  
+  get "profil/index"
+  get "profil/edit"
+  match '/profil/edit', :to => 'profil#edit', :as => :user
+  match '/profil/update/:id', :to => 'profil#update', :as => :user
+  put "profil/update"
+
+  devise_for :users
+
   resources :news
 
   resources :announcements

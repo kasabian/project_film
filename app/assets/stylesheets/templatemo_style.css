@@ -295,21 +295,23 @@ h3 {
 /* content */
 
 #templatemo_content {
-	width: 954px;
-	margin: 0 auto;
-	padding: 30px 15px;
-	background: #ffffff;
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto 0 180px;
+    min-height: 500px;
+    padding: 30px 15px;
+    width: 825px;
 }
 
 .product_box {
 	float: left;
-	width: 212px;
-	height: 293px;
+	width: 155px;
+	height: 245px;
 	background: #f1f1f1;
 	border: 1px solid #e0e0e0;
 	padding: 8px 7px;
 	margin-bottom: 10px;
 	text-align: center;
+	font-size: 12px;
 }
 
 .product_box:hover {
@@ -502,9 +504,9 @@ label {
 }
 
 .con {
- width: 100%;
- height: 45px;
- margin-top: -10px;
+    height: 45px;
+    margin: -10px auto auto;
+    width: 850px;
 }
 img {border: none;}
 ul#topnav {
@@ -549,7 +551,6 @@ background: url(/images/bg.gif) repeat-x left bottom;
 #templatemo_menu_menu{
     background: none repeat scroll 0 0 #282828;
     height: 40px;
-    padding-left: 24%;
     position: fixed;
     width: 100%;
     z-index: 100;  
@@ -585,5 +586,31 @@ background: url(/images/bg.gif) repeat-x left bottom;
     margin-bottom: 30px;
     padding: 20px;
     font-size: 14px;
+ }
+ 
+ .log_in {
+    color: red;
+    font-size: 16px;
+    position: absolute;
+    top: 6px;
+    right: 35px;
+ }
+ 
+.avatar_block
+ {
+   float:left;
+   margin-right: 50px;
+ }
+ 
+ #vidget
+  {
+    position: absolute;
+    right: 70px;
+    top: 481px;
+  }
+ 
+ p 
+ {
+   margin-bottom: -8px;
  }
 /* end of menu */	

@@ -1,0 +1,9 @@
+<h1>Профиль</h1> <br />
+
+ <div class = "avatar_block"> <%= image_tag(@user.avatar)%> </div>
+
+ <p><strong>Ник:</strong> <%= @user.username %></p> <br />
+ <p><strong>Почта:</strong><%= @user.email %></p> <br />
+
+ <%= link_to "Редактировать профиль", profil_edit_path%>
+

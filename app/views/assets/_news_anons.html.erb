@@ -5,8 +5,9 @@
      <%= object.name %>
     </div>
     <div class = "post_box_content">
-     <%= object.content %>
+     <%= object.content.html_safe %>
     </div>
+    <%if can? :edit, object%>
     <div>
         <div class = "post_box_menu">
          <%= link_to 'Удалить', object, method: :delete, data: { confirm: 'Вы уверены?' } %>
@@ -15,7 +16,7 @@
         <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %>
        </div>
     </div>
-    
+    <%end%>
  </div>
  
 <% end %>
