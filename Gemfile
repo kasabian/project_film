@@ -13,6 +13,10 @@ gem 'mysql2'
 
 gem 'sqlite3'
 
+group :deployment, :production do
+  gem 'activerecord-mysql2-adapter'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
