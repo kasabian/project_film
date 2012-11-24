@@ -1,6 +1,8 @@
 <h1>Профиль</h1> <br />
 
- <div class = "avatar_block"> <%= image_tag(@user.avatar)%> </div>
+   <div class = "avatar_block"> 
+       <%= if @user.avatar? then image_tag(@user.avatar) else image_tag("/camera_a.gif") end%> 
+   </div>
 
  <p><strong>Ник:</strong> <%= @user.username %></p> <br />
  <p><strong>Почта:</strong><%= @user.email %></p> <br />
