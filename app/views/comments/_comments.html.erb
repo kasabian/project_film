@@ -5,7 +5,9 @@
 
   <div class="comment_box">
     <div class="c_image_box">
-      <%=image_tag(comment.user.avatar.smal_avatar.url)%>
+     <%= if comment.user.avatar? then image_tag(comment.user.avatar.smal_avatar.url) else image_tag("/smal_avatar_camera_a.gif") end%> 
+      
+    
     </div>
     <div class = "c_other_box">
       <strong> <%= comment.user.username %> </strong>

@@ -11,6 +11,7 @@ gem 'mysql2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
