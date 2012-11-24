@@ -11,12 +11,6 @@ gem 'mysql2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-group :deployment, :production do
-  gem 'activerecord-mysql2-adapter'
-end
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
