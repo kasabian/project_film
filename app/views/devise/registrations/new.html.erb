@@ -1,12 +1,12 @@
 <h2>Регистрация</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-<!--   <%= devise_error_messages!%> -->
+   <%= devise_error_messages!%> 
   
-  <div><%= f.label 'ник' %><br />
+  <div><%= f.label 'ник (только уникальный)' %><br />
   <%= f.text_field :username %></div>
  
- <div><%= f.label 'emeil' %><br />
+ <div><%= f.label 'emeil (только уникальный)' %><br />
   <%= f.email_field :email %></div>
 
   <div><%= f.label "пароль" %><br />

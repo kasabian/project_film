@@ -9,7 +9,7 @@ body {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 14px;
 	color: #5B5B5B;
-    background: #ffffff;
+        background: #ffffff;
 }
 
 a:link, a:visited { color: #0066CC; text-decoration: none; } 
@@ -490,6 +490,7 @@ h3 {
 	margin: 0 auto;	
 	background: black;
 	padding-top: 59px;
+	
 	}
 
 .slider_nivo_ {
@@ -497,6 +498,7 @@ h3 {
 	margin: 0 auto;
 	background: black;
 	text-align: right;
+	
 }
 
 label {
