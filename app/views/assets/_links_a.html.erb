@@ -1,10 +1,10 @@
 
 <ul id="topnav" class="v1">
-        <li><%=link_to 'Главная', films_path %></li>
-        <li><%=link_to 'Фильмы', kinofilms_index_path %></li>
-        <li><%=link_to 'Мультфильмы', cartoons_index_path %></li>
-        <li><%=link_to 'Анонсы', announcements_path %></li>
-        <li><%=link_to 'Новости', news_index_path %></li>
+        <li><%=link_to 'На сайт', films_path %></li>
+        <li><%=link_to 'Настройки', setting_index_path %></li>
+        <li><%=link_to 'Изображения слайдера', '#' %></li>
+        <li><%=link_to 'Реклама', '#' %></li>
+         
         <% if user_signed_in? %>
          <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete%> </li>
          <li><%= link_to "Профиль", profil_index_path %> </li>

@@ -3,7 +3,7 @@ class NewsController < ApplicationController
   # GET /news.json
   def index
     @news = News.all
-    @news = Kaminari.paginate_array(@news).page(params[:page]).per(16)
+    @news = Kaminari.paginate_array(@news).page(params[:page]).per(Setting.first.count_page)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news }

@@ -1,6 +1,12 @@
 ProjectFilm::Application.routes.draw do
  
- 
+  match "/admin" => "admin#index"
+  get "admin/index"
+  
+  scope "/admin" do
+     resources :setting
+  end
+
   match "/films/new" => "films#new"
   match "/films/:frendlyname" => "films#show", :via => :get
   match '/profil/edit', :to => 'profil#edit', :as => :user
