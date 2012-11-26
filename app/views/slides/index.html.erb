@@ -1,0 +1,24 @@
+<h1>Слайды</h1>
+
+
+<% @slides.each do |slide| %>
+
+ 
+  <div class = "post_box">
+      <%= image_tag(slide.image) if slide.image? %><br />
+
+     </strong>Показавать:</strong> <%= slide.is_show %><br />
+    <div style = "margin-bottom:50px;">
+      <tr>
+        <td><%= link_to 'Редактировать', edit_slide_path(slide) %></td>
+        <td><%= link_to 'Удалить', slide, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+       </div>
+      
+    </div>
+
+<% end %>
+<br />
+<br />
+
+<%= link_to 'Добавить слайд', new_slide_path %>

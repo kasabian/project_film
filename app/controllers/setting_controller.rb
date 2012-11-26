@@ -1,7 +1,7 @@
 # encoding: utf-8
 class SettingController < ApplicationController
     layout "admin" 
-  
+    load_and_authorize_resource
     def index
      @setting = Setting.first  
       respond_to do |format|

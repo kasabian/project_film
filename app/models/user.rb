@@ -33,4 +33,12 @@ class User < ActiveRecord::Base
     def set_default_role
       self.role_id ||= Role.find_by_name(:user).id
     end
+    
+    
+    def self.admin? current_user
+      status = false
+      role = Role.find_by_id(current_user.role_id).name if current_user != nil
+      status = true if role == "admin"
+      status
+    end  
 end

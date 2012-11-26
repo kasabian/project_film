@@ -626,4 +626,12 @@ background: url(/images/bg.gif) repeat-x left bottom;
  {
    margin-bottom: -8px;
  }
+ 
+ .admin_link_block
+ {
+   margin-left: 10px;
+   position: absolute;
+   right: 32px;
+   top: 21px;
+ }
 /* end of menu */	

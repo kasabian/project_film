@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125213855) do
+ActiveRecord::Schema.define(:version => 20121126092711) do
 
   create_table "announcements", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20121125213855) do
     t.string   "site_name"
     t.string   "tegs"
     t.integer  "count_page"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "slides", :force => true do |t|
+    t.string   "image"
+    t.boolean  "is_show"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

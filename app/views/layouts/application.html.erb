@@ -12,9 +12,10 @@
 <body>
 <div id="templatemo_menu_menu">  
   <div class="con">
-     <%= render "assets/links"%>
+    <%= render "assets/links"%>
   </div>
     <% if user_signed_in? %>
+      <div class = "admin_link_block"><%if admin? %> <%=link_to 'Админка', admin_path %> <%end%> </div> 
        <span class = "log_in"> привет: <%= current_user.username %> </span>
      <%end%>
  </div> <!-- end of menu -->
