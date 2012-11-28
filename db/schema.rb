@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122100222) do
+ActiveRecord::Schema.define(:version => 20121128194654) do
+
+  create_table "ads", :force => true do |t|
+    t.string   "image"
+    t.string   "url"
+    t.string   "title"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "status"
+  end
 
   create_table "announcements", :force => true do |t|
     t.string   "name"
@@ -66,6 +76,21 @@ ActiveRecord::Schema.define(:version => 20121122100222) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.string   "site_name"
+    t.string   "tegs"
+    t.integer  "count_page"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "slides", :force => true do |t|
+    t.string   "image"
+    t.boolean  "is_show"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

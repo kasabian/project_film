@@ -1,3 +1,7 @@
 <h1>мультфильмы</h1>
 <%= render "assets/content", :films => @films%>
 <%= render "assets/pagination", :films => @films%>
+
+ <% content_for :keywords do %>
+   <%= kay_words%>
+  <% end %>

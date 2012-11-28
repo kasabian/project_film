@@ -13,3 +13,7 @@
 
 <%= link_to 'Edit', edit_news_path(@news) %> |
 <%= link_to 'Back', news_index_path %>
+
+ <% content_for :keywords do %>
+   <%= kay_words%>
+ <% end %>

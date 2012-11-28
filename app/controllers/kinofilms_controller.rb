@@ -6,7 +6,7 @@ class KinofilmsController < ApplicationController
 	              @films = @janr.films.order("created_at DESC").uniq
 		   else   @films = Film.where(:type_id=>type.id).order("created_at DESC")
 		   end  
-    @films = Kaminari.paginate_array(@films).page(params[:page]).per(16)  
+      @films = Kaminari.paginate_array(@films).page(params[:page]).per(Setting.first.count_page)  
       respond_to do |format|
         format.html 
         format.json { render json: @films }
