@@ -4,7 +4,7 @@ ProjectFilm::Application.routes.draw do
   get "admin/index"
   
   scope "/admin" do
-     resources :setting, :slides
+     resources :setting, :slides, :ads
   end
 
   match "/films/new" => "films#new"

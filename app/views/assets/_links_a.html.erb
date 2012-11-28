@@ -3,7 +3,7 @@
         <li><%=link_to 'На сайт', films_path %></li>
         <li><%=link_to 'Настройки', setting_index_path %></li>
         <li><%=link_to 'Изображения слайдера', slides_path %></li>
-        <li><%=link_to 'Реклама', '#' %></li>
+        <li><%=link_to 'Реклама', ads_path %></li>
          
         <% if user_signed_in? %>
          <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete%> </li>
