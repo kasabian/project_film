@@ -2,16 +2,12 @@
 
    <%= form_for(@user) do |f| %>
          
-         <%= if @user.avatar? then image_tag(@user.avatar) else image_tag("/camera_a.gif") end%>  <br /> <br />
+         <%= if @user.avatar? then image_tag(@user.avatar.big_image.url) else image_tag("/camera_a.gif") end%>  <br /> <br />
          <%= f.label 'вебрать изображение' %><br />
          <%= f.file_field :avatar, :length => 5 %>
          <%= f.hidden_field :avatar_cache %> 
    
-         <div class="field">
-          <%= f.label 'ник' %><br />
-          <%= f.text_field :username %>
-         </div>
-         
+        
          <div class="actions">
            <%= f.submit 'Готово' %>
         </div>

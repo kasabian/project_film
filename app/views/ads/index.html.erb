@@ -1,0 +1,25 @@
+<h1>Банеры на сайте</h1>
+
+
+
+<% @ads.each do |ad| %>
+
+
+  <div class = "post_box">
+    
+ <table>
+   <tr>
+      <td><strong> линк для банера: </strong><br /> <%= ad.url %></td>
+      <td><strong> текст при наведении: </strong><br /> <%= ad.title %></td>
+      <td><strong> название: </strong><br /> <%= ad.name %></td>
+       <td style = "color:red;"><strong> Статус: </strong><br /> <%= ad.status %></td>
+   </tr>
+ </table>
+    <%= image_tag(ad.image) if ad.image? %><br />
+      <%= link_to 'Редактировать', edit_ad_path(ad) %> | 
+      <%= link_to 'Удалить', ad, method: :delete, data: { confirm: 'Вы уверены?' } %>
+  </div>
+  <% end %>
+<br />
+
+<%= link_to 'New Ad', new_ad_path %>

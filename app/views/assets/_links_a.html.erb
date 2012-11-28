@@ -1,0 +1,15 @@
+
+<ul id="topnav" class="v1">
+        <li><%=link_to 'На сайт', films_path %></li>
+        <li><%=link_to 'Настройки', setting_index_path %></li>
+        <li><%=link_to 'Изображения слайдера', slides_path %></li>
+        <li><%=link_to 'Реклама', ads_path %></li>
+         
+        <% if user_signed_in? %>
+         <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete%> </li>
+         <li><%= link_to "Профиль", profil_index_path %> </li>
+         <% else %> 
+         <li><%= link_to "Войти", new_user_session_path%> </li>
+        <%end%> 
+                
+</ul>

@@ -1,24 +1,26 @@
 ProjectFilm::Application.routes.draw do
- 
- 
+
+  match "/admin" => "setting#index"
+  get "admin/index"
+  
+  scope "/admin" do
+     resources :setting, :slides, :ads
+  end
+
   match "/films/new" => "films#new"
   match "/films/:frendlyname" => "films#show", :via => :get
   match '/profil/edit', :to => 'profil#edit', :as => :user
   match '/profil/update/:id', :to => 'profil#update', :as => :user
-  get "profil/index"
-  get "profil/edit"
+ 
   put "profil/update"
   
   devise_for :users
-
-  resources :news
-
-  resources :announcements
-
+  resources :news, :announcements
   get "search/index"
   get "cartoons/index"
   get "kinofilms/index"
-
+  get "profil/index"
+  get "profil/edit"
   
  
   resources :films do

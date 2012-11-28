@@ -17,7 +17,7 @@
   </div> <br />
 
   
-   <%= image_tag(@film.image_url) if @film.image? %> <br /> <br />
+   <%= image_tag(@film.image.big_image.url) if @film.image? %> <br /> <br />
          <%= f.label 'вебрать изображение' %><br />
          <%= f.file_field :image, :length => 5 %>
         <%= f.hidden_field :image_cache %> 

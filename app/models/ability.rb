@@ -9,8 +9,10 @@ class Ability
       can :read, :all  
       can :create, Comment
       can :destroy, Comment, :user_id => user.id
-     else
+      cannot :manage, [Slide, Setting, Ad] 
+    else
       can :read, :all
+      cannot :manage, [Slide, Setting, Ad] 
     end 
   end
 end

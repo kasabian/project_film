@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= yield  :name%> Онлайн кинотеaтр</title>
+<meta name="keywords" content="<%= yield :keywords%>" />
+<meta name="description" content="Онлайн кинотеатр" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="templatemo_menu_menu">  
+  <div class="con">
+     <%= render "assets/links_a"%>
+  </div>
+    <% if user_signed_in? %>
+       <span class = "log_in"> привет: <%= current_user.username %> </span>
+     <%end%>
+ </div> <!-- end of menu -->
+ 
+  
+<div id="templatemo_follow_me_wrapper">
+
+	<div id="templatemo_follow_me">
+          <%= form_tag search_index_path, :method => 'get' do %>
+             <%= text_field_tag :search, params[:search], :placeholder=> "Найти фильм.."%>
+             <%= submit_tag "Искать", :name => nil  %>
+          <% end %>
+       <div class="cleaner"></div>
+    </div> <!-- end of templatemo_menu -->
+
+</div> <!-- end of templatemo_menu_wrapper -->
+
+
+<div id="templatemo_content">
+	<%= yield %>
+ </div> <!-- end of templatemo_content -->
+
+</body>
+</html>
