@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
  load_and_authorize_resource
- 
+ helper :all
   # GET /films
   # GET /films.json
   def index
@@ -90,11 +90,15 @@ class FilmsController < ApplicationController
   
   
    def rate
-    @film = Film.find(params[:id])
+    @film = Film.find_by_frendlyname(params[:id])
+    @film = Film.find(params[:id]) if @film == nil
     @film.rate(params[:stars], current_user, params[:dimension])
-    render :update do |page|
-      page.replace_html @film.wrapper_dom_id(params), ratings_for(@film, params.merge(:wrap => false))
-      page.visual_effect :highlight, @film.wrapper_dom_id(params)
+     respond_to do |format|
+       if @film.rate(params[:stars], current_user, params[:dimension])
+         format.js { render :partial => "rating" }
+       else
+         format.js { render :partial => "rating" }
+      end
     end
    end 
   
