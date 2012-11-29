@@ -25,6 +25,9 @@ ProjectFilm::Application.routes.draw do
  
   resources :films do
      resources :comments
+       member do
+        post :rate
+       end
   end
 
   # The priority is based upon order of creation:
