@@ -37,8 +37,11 @@
      </div> 
 </div>
 
-<div style = "height:400px;">
+
+<div class = "film_box">
   <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
+  <%= ratings_for @film %>
+  оценило людей: <%= @film.rates.count%> 
 </div>
 
  <%if can? :update, @film%>

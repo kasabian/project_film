@@ -14,9 +14,10 @@ class FilmsController < ApplicationController
 
   # GET /films/1
   # GET /films/1.json
-  def show
+  def show 
     @film = Film.find_by_frendlyname(params[:frendlyname])
     @film = Film.find(params[:frendlyname]) if @film == nil
+    @rate  = @film.rates
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @film }
@@ -86,4 +87,15 @@ class FilmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+   def rate
+    @film = Film.find(params[:id])
+    @film.rate(params[:stars], current_user, params[:dimension])
+    render :update do |page|
+      page.replace_html @film.wrapper_dom_id(params), ratings_for(@film, params.merge(:wrap => false))
+      page.visual_effect :highlight, @film.wrapper_dom_id(params)
+    end
+   end 
+  
 end

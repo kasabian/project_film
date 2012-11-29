@@ -4,6 +4,7 @@ class Film < ActiveRecord::Base
   
   validates :frendlyname, :uniqueness => true
   
+   ajaxful_rateable :stars => 5
   validates :frendlyname, :presence => true,
                        :length => { :minimum => 1}
   validates :frendlyname, :format => { :with => /\A[a-zA-Z]+\z/}

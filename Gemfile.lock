@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/edgarjs/ajaxful-rating.git
+  revision: f22e2c38d601f8279e959fbe9a578b2314235505
+  branch: rails3
+  specs:
+    ajaxful_rating (3.0.0.beta8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -194,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ajaxful_rating!
   cancan
   capistrano
   capybara

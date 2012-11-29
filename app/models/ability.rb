@@ -6,7 +6,8 @@ class Ability
     if user.role.name == "admin"  
      can :manage, :all  
     elsif user.role.name == "user"  
-      can :read, :all  
+      can :read, :all
+      can :rate, :all
       can :create, Comment
       can :destroy, Comment, :user_id => user.id
       cannot :manage, [Slide, Setting, Ad] 
