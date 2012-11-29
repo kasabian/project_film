@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   
   before_save :set_default_role
   
+  ajaxful_rater
+  has_many :rates
   has_many :users_roles
   belongs_to :role
   has_many :comments
