@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
+gem 'ajaxful_rating'
 gem 'rails', '3.2.8'
 gem 'carrierwave'
 gem 'rmagick'
