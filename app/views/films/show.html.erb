@@ -1,5 +1,5 @@
 <div class="product_detail_cont">
-      <div class="product_detail_left"><%= image_tag(@film.image.big_image.url) %></div>
+     <div class="product_detail_left"><%= image_tag(@film.image.big_image.url) %></div>
      <div >
        <p>
             <b>Название фильма:</b>
@@ -40,7 +40,7 @@
 
 <div class = "film_box">
   <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
-  <%= ratings_for @film %>
+  <%= ratings_for @film, current_user %>
   оценило людей: <%= @film.rates.count%> 
 </div>
 
