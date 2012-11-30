@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
  load_and_authorize_resource
- 
+ helper :all
   # GET /films
   # GET /films.json
   def index
@@ -14,9 +14,10 @@ class FilmsController < ApplicationController
 
   # GET /films/1
   # GET /films/1.json
-  def show
+  def show 
     @film = Film.find_by_frendlyname(params[:frendlyname])
     @film = Film.find(params[:frendlyname]) if @film == nil
+    @rate  = @film.rates
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @film }
@@ -86,4 +87,19 @@ class FilmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+   def rate
+    @film = Film.find_by_frendlyname(params[:id])
+    @film = Film.find(params[:id]) if @film == nil
+    @film.rate(params[:stars], current_user, params[:dimension])
+     respond_to do |format|
+       if @film.rate(params[:stars], current_user, params[:dimension])
+         format.js { render :partial => "rating" }
+       else
+         format.js { render :partial => "rating" }
+      end
+    end
+   end 
+  
 end

@@ -626,6 +626,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
  {
    margin-bottom: -8px;
  }
+
  
  .admin_link_block
  {
@@ -642,4 +643,12 @@ background: url(/images/bg.gif) repeat-x left bottom;
    padding-bottom: 10px;
  }
  
+
+ .film_box
+ {
+    background-color: black;
+    height: 400px;
+    padding: 10px;
+    width: 605px;
+ }
 /* end of menu */	
