@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129115039) do
+ActiveRecord::Schema.define(:version => 20121130021433) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20121129115039) do
     t.string   "country"
     t.string   "tag"
     t.string   "frendlyname"
+    t.float    "rate"
+    t.float    "f_rate"
   end
 
   create_table "films_janrs", :id => false, :force => true do |t|
