@@ -4,7 +4,7 @@
   <table width = "300" >
    <% top_films.each do |top_film| %>
        <tr>
-        <td><%= link_to top_film.name, top_film %> </td>
+        <td><%= link_to (cut_str top_film.name, 27), top_film %> </td>
         <td><%= image_tag("/star.png")%> </td>
         <td><%= sprintf('%.2f', top_film.f_rate.to_f)%> </td>
        </tr>

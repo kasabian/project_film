@@ -5,8 +5,8 @@
        <div class="product_box margin_r_10">
           <%= link_to image_tag(film.image.smal_image.url), "/films/#{film.frendlyname}" + ".html" %>
           
-          <br /><strong><%=film.name%> </strong><br />
-          <%= film.year %>,<%= film.country %><br />
+          <div style = "margin-bottom: -7px;"><strong><%= cut_str film.name, 19 %> </strong> </div>
+          <div><%= film.year %>,<%= film.country %></div>
         
         </div>
      <% end %>
