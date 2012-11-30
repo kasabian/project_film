@@ -1,7 +1,9 @@
  <div class = "janr">
-  <% Janr.all.each do |janr| %>
-    <h1> <%= link_to janr.name,"?janr=#{janr.id}"%> </h1>
-  <%end%><br /> 
+  <div style = "width:800px;">
+    <% Janr.all.each do |janr| %>
+      <h1> <%= link_to janr.name,"?janr=#{janr.id}"%> </h1>
+    <%end%><br /> 
+  </div> 
     <div>
      <%if @janr != nil %>
      <strong> выбран жанр:</strong> <%= @janr.name %><br />  <%=link_to "отменить", kinofilms_index_path%> 

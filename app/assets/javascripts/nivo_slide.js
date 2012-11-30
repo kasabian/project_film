@@ -20,11 +20,11 @@
     $("#topnav li").hover(function() {    //On hover...
         $(this).find("span").stop().animate({
             marginTop: "-40" //Find the span tag and move it up 40 pixels
-        }, 250);
+        }, 0);
     } , function() { //On hover out...
         $(this).find("span").stop().animate({
             marginTop: "0" //Move the span back to its original state (0px)
-        }, 250);
+        }, 0);
     });
     
     
