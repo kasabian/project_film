@@ -1,14 +1,13 @@
 class Film < ActiveRecord::Base
-  attr_accessible :film, :introtext, :name, :role, :year, :image, :image_cache,:janr, :film_type, :directed_by, 
+  attr_accessible :film, :introtext, :name, :role, :year, :image, :image_cache,:janr, :film_type, :directed_by, :f_rate,
                   :length, :country, :tag, :frendlyname
   
   validates :frendlyname, :uniqueness => true
   
-   ajaxful_rateable :stars => 5
+  ajaxful_rateable :stars => 5
   validates :frendlyname, :presence => true,
                        :length => { :minimum => 1}
   validates :frendlyname, :format => { :with => /\A[a-zA-Z]+\z/}
-  
   attr_accessor :janr, :film_type
   
   belongs_to :type
