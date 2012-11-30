@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128194654) do
+ActiveRecord::Schema.define(:version => 20121130021433) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20121128194654) do
     t.string   "country"
     t.string   "tag"
     t.string   "frendlyname"
+    t.float    "rate"
+    t.float    "f_rate"
   end
 
   create_table "films_janrs", :id => false, :force => true do |t|
@@ -73,6 +75,19 @@ ActiveRecord::Schema.define(:version => 20121128194654) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

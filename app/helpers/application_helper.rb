@@ -1,5 +1,8 @@
 module ApplicationHelper
   
+   def top_films
+     Film.order("f_rate DESC").limit(10)
+   end  
    def site_name
      Setting.first.site_name 
    end  
