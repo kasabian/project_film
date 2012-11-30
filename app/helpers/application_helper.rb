@@ -21,5 +21,11 @@ module ApplicationHelper
      status = true if role == "admin"
      status      
    end
+   
+   def cut_str str, count 
+     if str.length > count then str[0..count.to_i]+".."
+     else str
+     end
+   end
   
 end

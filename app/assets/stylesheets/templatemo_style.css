@@ -305,11 +305,11 @@ h3 {
 .product_box {
 	float: left;
 	width: 155px;
-	height: 245px;
+	height: 225px;
 	background: #f1f1f1;
 	border: 1px solid #e0e0e0;
 	padding: 8px 7px;
-	margin-bottom: 10px;
+	margin: 15px;
 	text-align: center;
 	font-size: 12px;
 }
@@ -558,23 +558,31 @@ background: url(/images/bg.gif) repeat-x left bottom;
     z-index: 100;  
 }
 .janr{
-    border: 1px dashed brown;
+   
     margin-top: 20px;
     min-height: 42px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .janr div
 {
-    position: relative;
-    text-align: right;
-    width: 185px;
+   margin-right: 10px;
+    text-align: left;
+    width: 300px;
+    color: green;
+    
 }
 .janr h1{
   float:left;
   margin-left:10px;
   font-size:15px;
-  
+ 
+}
+
+.janr h1 a
+{
+   color: rgba(109, 123, 138, 0.89);
 }
 
 .post_box{
