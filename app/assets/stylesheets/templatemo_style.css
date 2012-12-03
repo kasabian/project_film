@@ -8,12 +8,12 @@ body {
 	line-height: 1.7em;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 14px;
-	color: #5B5B5B;
+	color: black;
         background: #ffffff;
 }
 
-a:link, a:visited { color: #0066CC; text-decoration: none; } 
-a:active, a:hover { color: #990000; text-decoration: none; }
+a:link, a:visited { color: gray; text-decoration: none; } 
+a:active, a:hover { color: gray; text-decoration: none; }
 
 p { margin: 0px; padding: 0px; }
 
@@ -315,7 +315,7 @@ h3 {
 }
 
 .product_box:hover {
-	background: #e7ebce;
+	background: #EDEDED;
 }
 
 .product_box a {
@@ -665,5 +665,63 @@ background: url(/images/bg.gif) repeat-x left bottom;
     position: absolute;
     right: 60px;
     top: 920px;
+ }
+ 
+ label {
+     color: black;
+      }
+ .reg label 
+  { 
+     position:relative;
+     bottom: 12px;
+  }
+  
+  
+  .reg input 
+  {
+     margin-left:35px;
+     moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-box-sizing: border-box;
+    border-color: #CCCCCC #E7E7E7 #E7E7E7;
+    border-image: none;
+    border-right: 1px solid #E7E7E7;
+    border-style: solid;
+    border-width: 1px;
+    color: #555555;
+    font-size: 14px;
+    height: 34px;
+    line-height: 35px;
+    max-width: 100% !important;
+    padding: 0 12px;
+    margin-bottom: 20px;
+  }
+  
+ .submit 
+ {
+    -moz-transition: background-color 0.12s ease-out 0s;
+    background: none repeat scroll 0 0 #2F3336;
+    border: medium none;
+    border-radius: 2px 2px 2px 2px;
+    color: #E0E0E0;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: 600;
+    height: 34px;
+    line-height: 35px;
+    margin: 0 5px 2px 2px;
+    padding: 0 11px;
+    text-align: center;
+    text-transform: uppercase;
+ }
+ 
+ .s{
+    background: #2F3336;
+    border:none;
+    color: white !important;
  }
 /* end of menu */	

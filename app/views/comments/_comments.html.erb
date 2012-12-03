@@ -22,11 +22,11 @@
          <% if can? :destroy, comment %> 
          <%= link_to 'Удалить коментарий', [comment.film, comment],
                :confirm => 'Вы уверены?',
-               :method => :delete %>
+               :method => :delete,:style => "color:gray;" %>
             <%end%>
             </div>
         
-        <div class="c_data_box">
+        <div class="c_data_box" style = "color:gray;">
            отправлен: <%= comment.created_at %>
          </div>
      </div>
@@ -38,7 +38,7 @@
  <% if can? :create, Comment then%>
  <%= form_for([film, film.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label 'Добавить коментарий' %><br />
+    <%= f.label 'Добавить коментарий', :style => "color:black;" %><br />
     <%= f.text_area :content, :size => "100x5" %>
   </div>
   <div class="actions">
