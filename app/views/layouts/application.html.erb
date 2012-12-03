@@ -28,10 +28,10 @@
   
 <div id="templatemo_follow_me_wrapper">
 
-	<div id="templatemo_follow_me">
+	<div id="templatemo_follow_me", class = "reg">
           <%= form_tag search_index_path, :method => 'get' do %>
              <%= text_field_tag :search, params[:search], :placeholder=> "Найти фильм.."%>
-             <%= submit_tag "Искать", :name => nil  %>
+             <%= submit_tag "Искать", :name => nil  , :class => "s"%>
         <% end %>
     	
   

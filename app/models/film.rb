@@ -5,7 +5,7 @@ class Film < ActiveRecord::Base
   validates :frendlyname, :uniqueness => true
   
   ajaxful_rateable :stars => 5
-  validates :frendlyname, :presence => true,
+  validates :frendlyname, :image, :presence => true,
                        :length => { :minimum => 1}
   validates :frendlyname, :format => { :with => /\A[a-zA-Z]+\z/}
   attr_accessor :janr, :film_type
@@ -13,6 +13,8 @@ class Film < ActiveRecord::Base
   belongs_to :type
   has_and_belongs_to_many :janrs
   has_many :comments
+  
+  after_create :set_image
   
    def check_janr params
      janrs = Janr.all
@@ -25,6 +27,11 @@ class Film < ActiveRecord::Base
   def self.search(search)
     find(:all, :conditions => ['name LIKE ? ', "%#{search}%"])
   end
+  
+  def set_image
+    self.image = "no image" unless  self.image?
+    self.save
+  end  
  
   mount_uploader :image, ImageUploader
   
