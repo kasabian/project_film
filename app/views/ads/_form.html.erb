@@ -1,3 +1,5 @@
+<br />
+<h1 style = "color:gray;"> <%= @ad.name%></h1>
 <%= form_for(@ad) do |f| %>
   <% if @ad.errors.any? %>
     <div id="error_explanation">
@@ -10,8 +12,8 @@
       </ul>
     </div>
   <% end %>
-  
-  
+   
+   
     <div class="field">
      <%= image_tag(@ad.image) if @ad.image? %>  <br /> <br />
          <%= f.label 'рекламный банер' %><br />
@@ -32,10 +34,7 @@
     <%= f.label 'заголовок' %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label 'название' %><br />
-    <%= f.text_field :name %>
-  </div>
+
   <div class="actions">
     <%= f.submit 'Готово'%>
   </div>
