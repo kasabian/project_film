@@ -16,10 +16,9 @@
    </tr>
  </table>
     <%= image_tag(ad.image) if ad.image? %><br />
-      <%= link_to 'Редактировать', edit_ad_path(ad) %> | 
-      <%= link_to 'Удалить', ad, method: :delete, data: { confirm: 'Вы уверены?' } %>
-  </div>
+      <%= link_to 'Редактировать', edit_ad_path(ad) %> 
+    </div>
   <% end %>
 <br />
 
-<%= link_to 'New Ad', new_ad_path %>
+

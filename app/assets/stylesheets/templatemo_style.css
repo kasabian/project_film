@@ -296,8 +296,8 @@ h3 {
 
 #templatemo_content {
     background: none repeat scroll 0 0 #FFFFFF;
-    margin: 0 auto 0 180px;
-    min-height: 890px;
+    margin: 0 auto 0 10%;
+    min-height: 950px;
     padding: 30px 15px;
     width: 825px;
 }
@@ -309,7 +309,7 @@ h3 {
 	background: #f1f1f1;
 	border: 1px solid #e0e0e0;
 	padding: 8px 7px;
-	margin: 15px;
+	margin: 5px;
 	text-align: center;
 	font-size: 12px;
 }
@@ -393,9 +393,11 @@ h3 {
 /* content */
 
 #templatemo_footer_wrapper {
-	width: 100%;
-	margin: 0 auto;
-	background: #666956 url(/images/templatemo_footer_bg.jpg) repeat-x top;
+    background-color: black;
+    margin: 0 auto 70px;
+    padding-left: 19px;
+    width: 800px;
+	
 }
 
 #templatemo_footer {
@@ -403,13 +405,16 @@ h3 {
 	margin: 0 auto;
 	padding: 30px 10px;
 	color: #d4d5cd;
-	background: none;
-}
+	background: none repeat scroll 0 0 white;
+	margin-bottom: 70px;
+  }
 
-#templatemo_footer .section_w220 {
-	float: left;
-	width: 200px;
-	padding-right: 20px;
+ .section_w220 {
+    background-color: black;
+    float: left;
+    padding: 27px;
+    width: 200px;
+    margin-bottom: 50px;
 }
 
 #templatemo_footer .section_w220 h4 {
@@ -625,9 +630,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
  
  #vidget
   {
-    position: absolute;
-    right: 70px;
-    top: 481px;
+    margin-bottom: 30px;
   }
  
  p 
@@ -661,10 +664,9 @@ background: url(/images/bg.gif) repeat-x left bottom;
  
  .top_10_box 
  {
-    padding: 10px;
-    position: absolute;
-    right: 60px;
-    top: 920px;
+
+    margin-bottom: 20px;
+    margin-right: 10px;
  }
  
  label {
@@ -719,6 +721,14 @@ background: url(/images/bg.gif) repeat-x left bottom;
     text-transform: uppercase;
  }
  
+ .right_block
+  { 
+    position: absolute;
+    right: 2.5%;
+    top: 500px;
+
+    
+  }
  .s{
     background: #2F3336;
     border:none;
