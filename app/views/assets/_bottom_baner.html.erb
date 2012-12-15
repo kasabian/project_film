@@ -1,0 +1,14 @@
+
+    <div class="section_w220">
+      <% baner = Ad.find_by_name("bottom1_baner") %>
+      <%=(link_to image_tag(baner.image, :alt => baner.title),"http://"+baner.url) if (baner.image?) and (baner.status?) %>  
+    </div> 
+    <div class="section_w220">
+     <% baner = Ad.find_by_name("bottom2_baner") %>
+     <%=(link_to image_tag(baner.image, :alt => baner.title),"http://"+baner.url) if (baner.image?) and (baner.status?) %>  
+    </div>
+    <div class="section_w220">
+     <% baner = Ad.find_by_name("bottom3_baner") %>
+     <%=(link_to image_tag(baner.image, :alt => baner.title),"http://"+baner.url) if (baner.image?) and (baner.status?) %>  
+    </div>
+  

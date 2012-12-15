@@ -9,6 +9,14 @@
    Type.create(name:"films")
    Type.create(name:"cartoons")
    
+   Ad.create(:name =>"right_baner", :image => "/image.jpg")
+   Ad.create(:name => "bottom1_baner",:image => "/image.jpg")
+   Ad.create(:name => "bottom2_baner", :image => "/image.jpg")
+   Ad.create(:name => "bottom3_baner", :image => "/image.jpg")
+   Ad.create(:name => "midle_film_baner", :image => "/image.jpg")
+   
+   
+   
  #     
    Role.create(:name => :admin)
    Role.create(:name => :user)
