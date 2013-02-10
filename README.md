@@ -1,3 +1,3 @@
 сайт кинотеатр....
 
-http:\\www.paravoz.biz
+www.paravoz.biz
