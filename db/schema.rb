@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213125046) do
+ActiveRecord::Schema.define(:version => 20130213162725) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -101,6 +101,9 @@ ActiveRecord::Schema.define(:version => 20130213125046) do
     t.integer  "count_page"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "vidjet"
+    t.text     "counter"
+    t.text     "socbutton"
   end
 
   create_table "slides", :force => true do |t|
@@ -132,8 +135,6 @@ ActiveRecord::Schema.define(:version => 20130213125046) do
     t.integer  "role_id"
     t.string   "username"
     t.string   "avatar"
-    t.string   "login"
-    t.string   "provider"
     t.string   "url"
   end
 
