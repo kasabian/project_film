@@ -734,4 +734,22 @@ background: url(/images/bg.gif) repeat-x left bottom;
     border:none;
     color: white !important;
  }
+ 
+ 
+ .reg_form
+  {
+     float:left;
+  }
+  
+ .soc_reg
+  {
+    margin-left: 460px; 
+    min-height: 250px;
+  }
+  .soc_reg b
+  {
+     margin-left: -40px;
+     margin-top: 20px;
+     position: absolute;
+  }
 /* end of menu */	

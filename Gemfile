@@ -51,6 +51,9 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
  gem 'capistrano'
- gem    'unicorn'
+ gem 'unicorn'
+ gem 'omniauth'
+ gem 'omniauth-facebook'
+ gem 'omniauth-vkontakte'
 # To use debugger
 # gem 'debugger'

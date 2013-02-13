@@ -1,5 +1,11 @@
 ProjectFilm::Application.routes.draw do
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
+  get "omniauth_callbacks/facebook"
+
+  get "omniauth_callbacks/vkontakte"
+
   match "/admin" => "setting#index"
   get "admin/index"
   
@@ -13,9 +19,10 @@ ProjectFilm::Application.routes.draw do
   match '/profil/update/:id', :to => 'profil#update', :as => :user
  
   put "profil/update"
+ 
   
-  devise_for :users
   resources :news, :announcements
+  
   get "search/index"
   get "cartoons/index"
   get "kinofilms/index"

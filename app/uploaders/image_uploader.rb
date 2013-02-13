@@ -35,7 +35,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   
    version :big_image do
-    process :resize_to_fill => [210,250]
+    process :resize_to_fill => [300,430]
    end
    
   
