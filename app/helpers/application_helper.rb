@@ -11,10 +11,20 @@ module ApplicationHelper
      Setting.first.tegs 
    end
    
+   def vidjet_vk
+     Setting.first.vidjet  
+   end
+   
+   def counter
+     Setting.first.counter 
+   end
+   
    def slides
      Slide.all 
    end
-   
+   def socbutton
+      Setting.first.socbutton
+   end  
    def admin?
      status = false
      role = Role.find_by_id(current_user.role_id).name if current_user != nil

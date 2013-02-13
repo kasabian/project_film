@@ -42,8 +42,13 @@
 
 <div class = "film_box">
   <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
+  
+  <div style="float:right;"> <%=socbutton.html_safe%></div>
+  <div style="width:300px;">
   <%= ratings_for @film, current_user %>
   оценило людей: <%= @film.rates.count%> 
+  </div>
+  
 </div>
  <%if can? :update, @film%>
  <br />
