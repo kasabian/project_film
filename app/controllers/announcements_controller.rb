@@ -1,6 +1,7 @@
 class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
+   load_and_authorize_resource
   def index
     @announcements = Announcement.all
     @announcements = Kaminari.paginate_array(@announcements).page(params[:page]).per(Setting.first.count_page)

@@ -1,0 +1,25 @@
+<div class ="new_anons_content">
+   <h1><%= object.name %></h1>
+   <%= if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end%>
+   <p><%= object.content.html_safe %></p>
+</div>
+
+<%=socbutton.html_safe%> </br></br>
+
+<%if can? :update, object%>
+ <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %> |
+ <%= link_to 'Назад', if name_cont == "news" then news_path else  announcement_path end %></br>
+<%end%> 
+
+ <div class = "vk_comments">
+   Здесь будут коментарии с ВК
+ </div>
+ 
+ 
+ <% content_for :keywords do %>
+   <%= object.tag%>
+  <% end %>
+  
+  <% content_for :name do %>
+      <%= object.name%>
+  <% end %>

@@ -1,5 +1,6 @@
 class KinofilmsController < ApplicationController
-   def index
+    
+  def index
      type = Type.find_by_name("films")
      if params[:janr] != nil 
                       @janr = Janr.find_by_id(params[:janr].to_s)
