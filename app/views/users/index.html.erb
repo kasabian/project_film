@@ -1,0 +1,36 @@
+<h1>Пользователи</h1> <br />
+   
+
+  
+    <table class = "table_users table-test-odd">
+     <tr align=center style=" font-weight:bold">
+       <td>Id</td>
+       <td>Логин</td>
+       <td>Email </td>
+       <td>Количество входов  </td>
+       <td>Роль</td>
+       <td>Удалить
+       <td> </td>
+     </tr>
+<%@users.each do |user|%>
+ <tr>
+       <td><%=user.id%></td>
+       <td><%=user.username%></td>
+       <td><%=user.email%></td>
+       <td><%=user.sign_in_count%> </td>
+         <%=form_for user, :url => "users/#{user.id}", :html => { :method => "put" } do |f|%>
+        <td>
+          <%= select_tag(:role_id, options_for_select([['Админ', admin_id], ['Пользователь', user_id], ['Модератор',moderator_id], ['Гость',other_id]], user.role_id)) %>
+        
+        </td>
+         <td>
+          <%= check_box_tag("delete","delete") %>
+         </td>
+         <td> <%= f.submit "Применить"%></td>
+      <%end%>
+     </tr>
+<%end%>
+</table>
+   
+   
+   

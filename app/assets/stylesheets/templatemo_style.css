@@ -515,6 +515,12 @@ label {
     margin: -10px auto auto;
     width: 850px;
 }
+
+.con_a {
+    height: 45px;
+    margin: -10px auto auto;
+    width: 1100px;
+}
 img {border: none;}
 ul#topnav {
 margin: 10px 0 20px; 
@@ -752,4 +758,93 @@ background: url(/images/bg.gif) repeat-x left bottom;
      margin-top: 20px;
      position: absolute;
   }
+  
+  .inner_news_box
+  {
+    margin-left: 209px;
+    margin-top: 1px;
+    min-height: 210px;
+    padding: 10px;
+  }
+  
+  .inner_news_box_img
+  {
+    float: left;
+    margin-right: 13px;
+    padding-top: 25px;
+    min-height:205px;
+  }
+  
+  .inner_news_box .text
+  {
+    word-wrap: break-word;
+    width: 500px;
+    color:black;
+    min-height: 140px;
+  }
 /* end of menu */	
+.news_box{
+    margin-bottom:40px;
+    margin-top: 5px;
+    width: 730px;
+    
+ }
+ 
+ .post_box_name a
+  {
+    color: red;
+  }
+  
+  .news_menu
+  {
+    margin-top: 10px;
+  }
+  
+  .news_box .data
+  {
+    border-left: 1px dotted;
+    color: gray;
+    float: right;
+    margin-right: 113px;
+    padding-left: 17px;
+  }
+   .new_anons_content 
+   {
+    border-bottom: 1px dashed gray;
+    font-family: Arial;
+    margin-bottom: 50px;
+    padding-bottom: 60px;
+    width: 700px;
+    word-wrap: break-word;
+    min-height: 300px;
+    font-family: Arial;
+   }
+  
+  .new_anons_content img
+   {
+      float: left;
+       margin-bottom: 15px;
+       margin-right: 20px;
+      
+   }
+   
+   .new_anons_content h1
+   {
+    color: red;
+    font-size: 31px;
+    font-weight: bold;
+    margin: 0 0 30px;
+    padding: 2px 0;
+    text-align: center;
+   } 
+   
+   .odd {
+        background:#00C9BA;
+        color: black;
+        }
+                            
+    .table-test-odd {
+        width:400px;
+        border-collapse:collapse;
+        border:1px #e4e4e4 solid;
+        } 

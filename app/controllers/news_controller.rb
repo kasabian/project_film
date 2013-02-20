@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   # GET /news
   # GET /news.json
+ load_and_authorize_resource
   def index
     @news = News.all
     @news = Kaminari.paginate_array(@news).page(params[:page]).per(Setting.first.count_page)

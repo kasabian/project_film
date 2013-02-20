@@ -1,5 +1,7 @@
 ProjectFilm::Application.routes.draw do
 
+ 
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   get "omniauth_callbacks/facebook"
@@ -10,6 +12,7 @@ ProjectFilm::Application.routes.draw do
   get "admin/index"
   
   scope "/admin" do
+     resources :users, :only => [:index, :destroy, :update]
      resources :setting, :slides, :ads
   end
 

@@ -1,22 +1,39 @@
 
 <% objects.each do |object| %>
-  <div class = "post_box">
-    <div class = "post_box_name">
-     <%= object.name %>
-    </div>
-    <div class = "post_box_content">
-     <%= object.content.html_safe %>
-    </div>
-    <%if can? :edit, object%>
+  <div class = "news_box">   
     <div>
+      <div class = "inner_news_box_img">
+        <%= link_to (if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end), 
+         if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end 
+          %> 
+      </div>
+      
+      <div class = "inner_news_box">
+         <div class = "post_box_name">
+           <%= link_to object.name, if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html"end %>
+         </div>    
+         <div class = "text">
+           <%= object.introtext.html_safe %>
+         </div>
+         <%= link_to "Чтать полностю", if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end%>
+         <div class = "data"> отправлен: <%= object.created_at %> </div>
+      </div>
+    </div>
+    
+    
+    <div class = "news_menu">
+     <%if can? :destroy, object%> 
         <div class = "post_box_menu">
          <%= link_to 'Удалить', object, method: :delete, data: { confirm: 'Вы уверены?' } %>
        </div>
+       <%end%>
+       <%if can? :edit, object%>
        <div>
         <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %>
        </div>
+       <%end%>
     </div>
-    <%end%>
+    
  </div>
  
 <% end %>
