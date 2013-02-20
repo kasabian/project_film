@@ -7,6 +7,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
+
 (function($) {
     var NivoSlider = function(element, options){
         // Defaults are below

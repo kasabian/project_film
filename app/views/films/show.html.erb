@@ -52,8 +52,9 @@
 </div>
  <%if can? :update, @film%>
  <br />
- <%= link_to 'Редактировать ', edit_film_path(@film) %> |
- <%= link_to 'удалить ',@film,:confirm => 'Вы уверены?',:method => 'delete' %>
+ <%= link_to 'Редактировать ', edit_film_path(@film) %> <%end%>
+ <%if can? :destroy, @film%> | 
+  <%= link_to 'удалить ',@film,:confirm => 'Вы уверены?',:method => 'delete' %>
  <%end%>
 
   <%= render "comments/comments", :film => @film %>

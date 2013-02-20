@@ -2,7 +2,8 @@
 
 <%= render "assets/news_anons", :objects => @announcements, :name_cont => "announcements"%>
 <%= render "assets/pagination", :films =>  @announcements%>
-<%if can? :create,@announcements%>
+
+<%if can? :create,Announcement%>
  <%= link_to 'Создать анонс', new_announcement_path %>
 <%end%>
  <% content_for :keywords do %>

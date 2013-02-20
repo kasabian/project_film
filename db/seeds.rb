@@ -20,7 +20,9 @@
  #     
    Role.create(:name => :admin)
    Role.create(:name => :user)
+   Role.create(:name => :moderator)
    Role.create(:name => :other)
+   
 #    
    Janr.create(name:"биографический")
    Janr.create(name:"боевик")

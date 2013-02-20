@@ -1,7 +1,9 @@
 <h1>Редактировать фильм <%=@film.name%></h1><br />
 
 <div class="product_detail_cont">
+<%if can? :destroy, @film%>
 <%= link_to 'удалить данный контент',@film,:confirm => 'Вы уверены?',:method => 'delete' %><br />
-       <%= render 'form' %>
+<%end%> 
+ <%= render 'form' %>
 </div>
 <%= link_to 'показать', @film %> 

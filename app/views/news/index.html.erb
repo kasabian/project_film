@@ -3,6 +3,6 @@
 <%= render "assets/news_anons", :objects => @news, :name_cont => "news" %>
 <%= render "assets/pagination", :films =>  @news%>
 
-<%if can? :create, @news%>
+<%if can? :create, News%>
 <%= link_to 'Создать новость', new_news_path %>
 <%end%>
