@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214193849) do
+ActiveRecord::Schema.define(:version => 20130301212330) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20130214193849) do
     t.text     "vidjet"
     t.text     "counter"
     t.text     "socbutton"
+    t.text     "commentvk"
   end
 
   create_table "slides", :force => true do |t|

@@ -3,7 +3,7 @@
    <%= form_for(@user) do |f| %>
          
          <%= if @user.avatar? then image_tag(@user.avatar.big_image.url) else image_tag("/camera_a.gif") end%>  <br /> <br />
-         <%= f.label 'вебрать изображение' %><br />
+         <%= f.label 'выбрать изображение' %><br />
          <%= f.file_field :avatar, :length => 5 %>
          <%= f.hidden_field :avatar_cache %> 
    

@@ -15,7 +15,7 @@
          <div class = "text">
            <%= object.introtext.html_safe %>
          </div>
-         <%= link_to "Чтать полностю", if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end%>
+         <%= link_to "Открыть полностю", if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end%>
          <div class = "data"> отправлен: <%= object.created_at %> </div>
       </div>
     </div>

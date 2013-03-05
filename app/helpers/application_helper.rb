@@ -5,7 +5,11 @@ module ApplicationHelper
    end  
    def site_name
      Setting.first.site_name 
-   end  
+   end
+   
+    def comment_vk
+     Setting.first.commentvk 
+   end 
    
    def kay_words
      Setting.first.tegs 
