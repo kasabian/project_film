@@ -6,14 +6,14 @@
 
 <%=socbutton.html_safe%> </br></br>
 
-<%if can? :update, object%>
+<%if can? :update, News%>
  <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %> |
- <%= link_to 'Назад', if name_cont == "news" then news_path else  announcement_path end %></br>
+ <%= link_to 'Назад', if name_cont == "news" then "/news" else  "/announcements" end %></br>
 <%end%> 
-
- <div class = "vk_comments">
-   Здесь будут коментарии с ВК
- </div>
+<br />
+  <div class = "vk_comments">
+   <%= comment_vk.html_safe %>
+  </div>
  
  
  <% content_for :keywords do %>

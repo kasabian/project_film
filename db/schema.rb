@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214193849) do
+ActiveRecord::Schema.define(:version => 20130307134519) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(:version => 20130214193849) do
   create_table "announcements", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "introtext"
     t.string   "tag"
     t.string   "image"
+    t.string   "frandly_name"
   end
 
   create_table "comments", :force => true do |t|
@@ -75,11 +76,12 @@ ActiveRecord::Schema.define(:version => 20130214193849) do
   create_table "news", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "introtext"
     t.string   "tag"
     t.string   "image"
+    t.string   "frandly_name"
   end
 
   create_table "rates", :force => true do |t|
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20130214193849) do
     t.text     "vidjet"
     t.text     "counter"
     t.text     "socbutton"
+    t.text     "commentvk"
   end
 
   create_table "slides", :force => true do |t|

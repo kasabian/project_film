@@ -7,7 +7,7 @@ class Film < ActiveRecord::Base
   ajaxful_rateable :stars => 5
   validates :frendlyname, :image, :presence => true,
                        :length => { :minimum => 1}
-  validates :frendlyname, :format => { :with => /\A[a-zA-Z]+\z/}
+  validates :frendlyname, :format => { :with => /\A[a-zA-Z,-]+\z/}
   attr_accessor :janr, :film_type
   
   belongs_to :type

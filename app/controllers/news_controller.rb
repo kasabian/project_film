@@ -14,10 +14,11 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
-    @news = News.find(params[:id])
-
+    fn = params[:frendlyname]
+    @news = News.find_by_frandly_name(fn)
+    @news = News.find(fn) if @news == nil
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @news }
     end
   end

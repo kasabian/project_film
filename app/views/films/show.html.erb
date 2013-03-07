@@ -1,39 +1,53 @@
-<div class="product_detail_cont">
+
+ <div class="product_detail_cont">
+
      <div class="product_detail_left"><%= image_tag(@film.image.big_image.url) %></div>
      <div >
-       <p>
-            <b>Название фильма:</b>
-            <%= @film.name %>
-      </p> <br />
-       <p>
-            <b>Жанр:</b>
-            <%= join_janrs(@film) %>
-      </p> <br />
-       <p>
-            <b>Год выпуска:</b>
-            <%= @film.year %>
-      </p> <br />
-      <p>
-            <b>Страна:</b>
-            <%= @film.country %>
-      </p> <br />
-      <p>
-            <b>Режиссер:</b>
-            <%= @film.directed_by %>
-      </p> <br />
-        <p>
-            <b>Главные роли:</b>
-             <%= @film.role %>
-        </p> <br />
-        <p>
-            <b>Продолжительность:</b>
-             <%= @film.length %>
-        </p> <br /><br />
-        
-        <p>
+      
+       
+       <ul class = "opis_film">
+       
+          <li style = "padding-top:0px;">
+           <span class ="name_film"> <%= @film.name %></span>
+         </li>
+         
+          <li>
+           <span>Жанр:</span>
+           <span class = "cl1">  <%= join_janrs(@film) %></span>
+         </li>      
+         
+         <li>
+           <span>Год выпуска:</span>
+           <span class = "cl1"> <%= @film.year %></span>
+         </li>
+         
+         <li>
+           <span>Страна:</span>
+           <span class = "cl1">  <%= @film.country %></span>
+         </li>
+         
+         <li>
+           <span>Режиссер:</span>
+           <span class = "cl1">  <%= @film.directed_by %></span>
+         </li>
+         
+         <li>
+           <span>Главные роли:</span>
+           <span class = "cl1"> <%= @film.role %></span>
+         </li>
+         
+          <li>
+           <span>Продолжительность:</span>
+           <span class = "cl1"> <%= @film.length %></span>
+         </li>
+       </ul>
+       <br />
+       <p style = "color:#515151; padding-right: 50px;">
             <b>Описание:</b>
             <%= @film.introtext %>
        </p> <br />
+          
+  
      </div> 
 </div>
 
