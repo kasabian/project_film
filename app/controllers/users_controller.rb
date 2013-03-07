@@ -1,3 +1,4 @@
+#ecoding: utf-8
 class UsersController < ApplicationController
   layout "admin" 
  load_and_authorize_resource
@@ -20,6 +21,6 @@ class UsersController < ApplicationController
        user.role_id = params["role_id"]
        user.save
     end   
-    redirect_to users_path
+    redirect_to users_path, notice: 'Изменения приняты.' 
   end
 end

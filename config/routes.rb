@@ -1,7 +1,7 @@
 ProjectFilm::Application.routes.draw do
 
- 
-
+    
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   get "omniauth_callbacks/facebook"
@@ -16,15 +16,18 @@ ProjectFilm::Application.routes.draw do
      resources :setting, :slides, :ads
   end
 
+  match "/news/:fn" => "news#show", :via => :get
+  match "/announcements/:fn" => "announcements#show", :via => :get  
   match "/films/new" => "films#new"
   match "/films/:frendlyname" => "films#show", :via => :get
+  
   match '/profil/edit', :to => 'profil#edit', :as => :user
   match '/profil/update/:id', :to => 'profil#update', :as => :user
  
   put "profil/update"
  
   
-  resources :news, :announcements
+  resources :news, :announcements 
   
   get "search/index"
   get "cartoons/index"
