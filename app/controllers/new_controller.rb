@@ -1,4 +1,4 @@
-class NewsController < ApplicationController
+class NewController < ApplicationController
   # GET /news
   # GET /news.json
  load_and_authorize_resource
@@ -14,11 +14,11 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
-    fn = params[:frendlyname]
+    fn = params[:fn]
     @news = News.find_by_frandly_name(fn)
     @news = News.find(fn) if @news == nil
     respond_to do |format|
-      format.html 
+      format.html # show.html.erb
       format.json { render json: @news }
     end
   end

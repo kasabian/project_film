@@ -4,18 +4,18 @@
     <div>
       <div class = "inner_news_box_img">
         <%= link_to (if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end), 
-         if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end 
+         if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html" end 
           %> 
       </div>
       
       <div class = "inner_news_box">
          <div class = "post_box_name">
-           <%= link_to object.name, if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html"end %>
+           <%= link_to object.name, if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html"end %>
          </div>    
          <div class = "text">
            <%= object.introtext.html_safe %>
          </div>
-         <%= link_to "Открыть полностю", if name_cont == "news" then news_path(object)+".html" else  announcement_path(object)+".html" end%>
+         <%= link_to "Открыть полностью",if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html" end%>
          <div class = "data"> отправлен: <%= object.created_at %> </div>
       </div>
     </div>

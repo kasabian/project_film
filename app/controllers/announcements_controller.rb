@@ -13,9 +13,10 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements/1
   # GET /announcements/1.json
-  def show
-    @announcement = Announcement.find(params[:id])
-
+  def show 
+    @announcement = Announcement.find_by_frandly_name(params[:fn])
+    @announcement = Announcement.find(params[:fn]) if @announcement == nil
+     
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @announcement }

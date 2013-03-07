@@ -294,24 +294,29 @@ h3 {
 
 /* content */
 
+#main
+ {
+   width: 1225px; 
+   margin: auto;
+ }
 #templatemo_content {
     background: none repeat scroll 0 0 #FFFFFF;
-    margin: 0 auto 0 10%;
+   /* margin: 0 auto 0 10%;*/
     min-height: 950px;
-    padding: 30px 15px;
-    width: 825px;
+    padding: 30px 0px 0px 20px;
+    width: 862px;
 }
 
 .product_box {
-	float: left;
-	width: 155px;
-	height: 225px;
-	background: #f1f1f1;
-	border: 1px solid #e0e0e0;
-	padding: 8px 7px;
-	margin: 5px;
-	text-align: center;
-	font-size: 12px;
+ background: none repeat scroll 0 0 #F1F1F1;
+    border: 1px solid #E7E7E7;
+    float: left;
+    font-size: 12px;
+    height: 295px;
+    margin: 5px;
+    padding: 8px 7px;
+    text-align: center;
+    width: 185px;
 }
 
 .product_box:hover {
@@ -593,7 +598,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
 
 .janr h1 a
 {
-   color: rgba(109, 123, 138, 0.89);
+   color: #515151;
 }
 
 .post_box{
@@ -729,11 +734,8 @@ background: url(/images/bg.gif) repeat-x left bottom;
  
  .right_block
   { 
-    position: absolute;
-    right: 2.5%;
-    top: 500px;
-
-    
+   float: right;
+   margin-top: 110px;
   }
  .s{
     background: #2F3336;
@@ -780,7 +782,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
     word-wrap: break-word;
     width: 500px;
     color:black;
-    min-height: 140px;
+    min-height: 200px;
   }
 /* end of menu */	
 .news_box{
@@ -806,7 +808,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
     color: gray;
     float: right;
     margin-right: 113px;
-    padding-left: 17px;
+    padding-left: 7px;
   }
    .new_anons_content 
    {
@@ -814,7 +816,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
     font-family: Arial;
     margin-bottom: 50px;
     padding-bottom: 60px;
-    width: 700px;
+    width: 810px;
     word-wrap: break-word;
     min-height: 300px;
     font-family: Arial;
@@ -847,4 +849,60 @@ background: url(/images/bg.gif) repeat-x left bottom;
         width:400px;
         border-collapse:collapse;
         border:1px #e4e4e4 solid;
+	 margin: auto;
         } 
+        
+   .login_soc 
+    {
+     background-color: transparent;
+     background-position: left top;
+     background-repeat: no-repeat;
+     display: inline-block;
+     height: 57px;
+     margin: 0 24px 18px 0;
+     width: 59px;  
+    }
+   .login_soc:hover 
+    {
+      background-position: left center;
+    }
+   .log_vk
+    {
+     background-image: url("/vkontakte.png");
+     margin-right: 0;
+    } 
+    
+    .log_fb
+    {
+     background-image: url("/faicbook_icon.png");
+     margin-right: 0;
+    } 
+    
+    .opis_film
+    {
+      list-style: none outside none;
+      margin-left: 320px;
+      padding: 0;
+      width: 500px;
+    }
+    
+    .opis_film li
+    {
+     border-bottom: 1px solid #E7E7E7;
+     color: #515151;
+     font-size: 11px;
+     line-height: 3;
+     margin-left: 0;
+     padding: 12px 12px 12px 0;
+    }
+    
+    .name_film
+    {
+     color: black;
+     font-size: 15px;
+    }
+    
+    .cl1
+    {
+      margin-left: 10px; 
+    }
