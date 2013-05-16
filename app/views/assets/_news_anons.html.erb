@@ -15,8 +15,10 @@
          <div class = "text">
            <%= object.introtext.html_safe %>
          </div>
+         <div >   
          <%= link_to "Открыть полностью",if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html" end%>
          <div class = "data"> отправлен: <%= object.created_at %> </div>
+         </div>
       </div>
     </div>
     

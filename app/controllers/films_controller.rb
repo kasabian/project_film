@@ -28,7 +28,6 @@ class FilmsController < ApplicationController
   # GET /films/new.json
   def new
     @film = Film.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @film }
@@ -43,7 +42,8 @@ class FilmsController < ApplicationController
   # POST /films
   # POST /films.json
   def create
-    @film = Film.new(params[:film])
+    user = current_user
+    @film = user.films.new(params[:film])
     @type = Type.find_by_name(params[:film][:film_type].to_s)
     @film.check_janr params
     @film.type_id = @type.id 

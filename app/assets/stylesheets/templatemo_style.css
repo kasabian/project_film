@@ -532,7 +532,6 @@ margin: 10px 0 20px;
 padding: 0; 
 list-style: none; 
 font-size: 1.1em;
-clear: both;
 float: left;
 width: 100%;
 }
@@ -571,7 +570,8 @@ background: url(/images/bg.gif) repeat-x left bottom;
     height: 40px;
     position: fixed;
     width: 100%;
-    z-index: 100;  
+    z-index: 100; 
+    opacity: 0.91; 
 }
 .janr{
    
@@ -782,7 +782,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
     word-wrap: break-word;
     width: 500px;
     color:black;
-    min-height: 200px;
+    min-height: 185px;
   }
 /* end of menu */	
 .news_box{
@@ -804,11 +804,11 @@ background: url(/images/bg.gif) repeat-x left bottom;
   
   .news_box .data
   {
-    border-left: 1px dotted;
+     border-left: 1px dotted;
     color: gray;
     float: right;
-    margin-right: 113px;
-    padding-left: 7px;
+    margin-right: 88px;
+    padding-left: 19px;
   }
    .new_anons_content 
    {

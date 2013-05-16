@@ -12,11 +12,14 @@ ProjectFilm::Application.routes.draw do
   get "admin/index"
   
   scope "/admin" do
-     resources :users, :only => [:index, :destroy, :update]
+     resources :users, :only => [:index, :destroy, :update, :show]
      resources :setting, :slides, :ads
   end
-
+  
+  match "/news/new" => "news#new"
   match "/news/:fn" => "news#show", :via => :get
+  
+  match "/announcements/new" => "announcements#new"
   match "/announcements/:fn" => "announcements#show", :via => :get  
   match "/films/new" => "films#new"
   match "/films/:frendlyname" => "films#show", :via => :get

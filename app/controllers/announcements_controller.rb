@@ -42,8 +42,8 @@ class AnnouncementsController < ApplicationController
   # POST /announcements
   # POST /announcements.json
   def create
-    @announcement = Announcement.new(params[:announcement])
-
+    user = current_user
+    @announcement = user.announcements.new(params[:announcement])
     respond_to do |format|
       if @announcement.save
         format.html { redirect_to announcements_url, notice: 'Announcement was successfully created.' }

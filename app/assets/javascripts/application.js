@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require tinymce
 
 
 $('a').live('ajax:complete', function(xhr, status) {

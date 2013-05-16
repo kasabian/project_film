@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   layout "admin" 
  load_and_authorize_resource
   def index
-     @users = User.all     
+    @users = User.all     
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     
   end
 
+  def show
+    @user = User.find_by_id(params["id"]) 
+  end  
+  
   def update
     @users = User.all
     user = User.find_by_id(params["id"])

@@ -14,7 +14,7 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
-    fn = params[:frendlyname]
+    fn = params[:fn]
     @news = News.find_by_frandly_name(fn)
     @news = News.find(fn) if @news == nil
     respond_to do |format|
@@ -42,7 +42,8 @@ class NewsController < ApplicationController
   # POST /news
   # POST /news.json
   def create
-    @news = News.new(params[:news])
+    user = current_user
+    @news = user.news.new(params[:news])
 
     respond_to do |format|
       if @news.save

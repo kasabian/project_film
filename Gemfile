@@ -8,6 +8,8 @@ gem 'kaminari'
 gem 'devise'
 gem 'cancan'
 gem 'mysql2'
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

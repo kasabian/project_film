@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307134519) do
+ActiveRecord::Schema.define(:version => 20130317100703) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130307134519) do
     t.string   "tag"
     t.string   "image"
     t.string   "frandly_name"
+    t.integer  "user_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130307134519) do
     t.string   "frendlyname"
     t.float    "rate"
     t.float    "f_rate"
+    t.integer  "user_id"
   end
 
   create_table "films_janrs", :id => false, :force => true do |t|
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20130307134519) do
     t.string   "tag"
     t.string   "image"
     t.string   "frandly_name"
+    t.integer  "user_id"
   end
 
   create_table "rates", :force => true do |t|

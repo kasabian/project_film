@@ -1,8 +1,9 @@
 class Film < ActiveRecord::Base
   attr_accessible :film, :introtext, :name, :role, :year, :image, :image_cache,:janr, :film_type, :directed_by, :f_rate,
-                  :length, :country, :tag, :frendlyname
+                  :length, :country, :tag, :frendlyname, :user_id
   
   validates :frendlyname, :uniqueness => true
+  belongs_to :user
   
   ajaxful_rateable :stars => 5
   validates :frendlyname, :image, :presence => true,
@@ -13,6 +14,7 @@ class Film < ActiveRecord::Base
   belongs_to :type
   has_and_belongs_to_many :janrs
   has_many :comments
+
   
   after_create :set_image
   

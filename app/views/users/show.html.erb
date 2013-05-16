@@ -1,0 +1,22 @@
+
+<h3>Добавленный контент</h3>
+
+<b>Фильмы</b><br>
+  <%@user.films.each do |film|%>
+   Название: <%= link_to film.name, film_path(film) %>
+   <br />
+  <%end%>
+
+<b>Новости</b></br>
+  <%@user.news.each do |new|%>
+   Название: <%= link_to new.name, news_path(new) %>
+   <br />
+  <%end%>
+<b>Анонсы</b></br>
+
+ <%@user.announcements.each do |a|%>
+   Название: <%= link_to a.name, announcement_path(a) %>
+   <br />
+  <%end%>
+
+

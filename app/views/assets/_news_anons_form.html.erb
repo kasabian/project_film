@@ -1,3 +1,5 @@
+ <%= tinymce %>
+
 
 <%= form_for(object) do |f| %>
   <% if object.errors.any? %>
@@ -42,7 +44,7 @@
   
   <div class="field">
     <%= f.label 'основной текст' %><br />
-    <%= f.text_area :content, :size => "100x25" %>
+    <%= f.text_area :content, :size => "100x25", :class => "tinymce" %>
   </div>
   <div class="actions">
     <%= f.submit 'Готово' %>

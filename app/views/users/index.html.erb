@@ -7,16 +7,22 @@
        <td>Id</td>
        <td>Логин</td>
        <td>Email </td>
+       <td>(+) фильмы</td>
+       <td>(+) новости</td>
+       <td>(+) анонсы</td>
        <td>Количество входов  </td>
        <td>Роль</td>
-       <td>Удалить
+       <td>Удалить </td>
        <td> </td>
      </tr>
 <%@users.each do |user|%>
  <tr>
        <td><%=user.id%></td>
-       <td><%=user.username%></td>
+       <td><%= link_to user.username, users_path+"/#{user.id}"%></td>
        <td><%=user.email%></td>
+       <td><%= user.films.length%></td>
+       <td><%= user.news.length%></td>
+       <td><%= user.announcements.length%></td>
        <td><%=user.sign_in_count%> </td>
          <%=form_for user, :url => "users/#{user.id}", :html => { :method => "put" } do |f|%>
         <td>

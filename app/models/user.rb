@@ -16,7 +16,9 @@ class User < ActiveRecord::Base
   has_many :users_roles
   belongs_to :role
   has_many :comments
-  
+  has_many :films
+  has_many :news
+  has_many :announcements
   mount_uploader :avatar, ImageUploader
   
   

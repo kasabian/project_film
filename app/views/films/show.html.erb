@@ -44,7 +44,8 @@
        <br />
        <p style = "color:#515151; padding-right: 50px;">
             <b>Описание:</b>
-            <%= @film.introtext %>
+            <%= @film.introtext.html_safe() %>
+            
        </p> <br />
           
   
@@ -61,7 +62,8 @@
   <div style="width:300px;">
   <%= ratings_for @film, current_user %>
   оценило людей: <%= @film.rates.count%> 
-  </div>
+
+</div>
   
 </div>
  <%if can? :update, @film%>
