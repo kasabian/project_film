@@ -1,4 +1,15 @@
-<h1>Новости</h1>
+<h1> Новости
+	
+   <%if @category != nil %>
+     <span class = "news_category_h">
+     <%=  @category.name%>
+     </span>
+   <%end%>
+
+</h1> 
+ 
+
+<br /> <br />
 
 <%= render "assets/news_anons", :objects => @news, :name_cont => "news" %>
 <%= render "assets/pagination", :films =>  @news%>

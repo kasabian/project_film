@@ -6,9 +6,9 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.7em;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: sans-serif ;
 	font-size: 14px;
-	color: black;
+	color: #363636;
         background: #ffffff;
 }
 
@@ -333,6 +333,7 @@ h3 {
 
 .product_box a img {
 	border: 1px solid #ffffff;
+  width: 180px;
 }
 
 .product_box h3 {
@@ -463,6 +464,7 @@ h3 {
     margin: 10px;
     min-height: 100px;
     width: 800px;
+    border-bottom: 1px solid #f3f3f3;
 }
 
 .c_image_box
@@ -473,24 +475,28 @@ h3 {
     width: 75px;
  }
  
+ .c_box_menu
+ {
+  font-size: 13px;
+  width:800px;
+ }
  .c_delete_box{
     float: left;
     margin-right: 30px;
     padding: 10px;
    }
  .c_data_box{
-    margin-left: 176px;
+    margin-left:  550px;
     padding: 10px;
     width: 350px;
    
 }
 .c_other_box {
-   margin-left: 81px;
-    padding: 1px;
+    margin-left: 81px;
+    min-height: 55px;
 }
 .pagin {
      margin: 25px;
-     color: maroon;
      font-size: 16px;
      text-align: center;
 }
@@ -565,6 +571,9 @@ ul#topnav.v1 a{
 color: #555;
 background: url(/images/bg.gif) repeat-x left bottom;
 }
+
+
+
 #templatemo_menu_menu{
     background: none repeat scroll 0 0 #282828;
     height: 40px;
@@ -573,12 +582,70 @@ background: url(/images/bg.gif) repeat-x left bottom;
     z-index: 100; 
     opacity: 0.91; 
 }
+
+.pod_menu
+{
+  background-color: white;
+  width: 450px;
+  position: fixed;
+  top: 40px;
+  min-height: 150px;
+  border: 1px solid rgb(211, 204, 204);
+  border-top: none;
+  padding: 15px 5px 40px 20px;
+  display: none;
+  border-radius: 0px 0px 5px 5px;
+  font-size: 13px;
+}
+
+
+.list
+ {
+   float: left;
+   margin-top: 10px;
+   margin-right: 47px;
+   width: 90px ;
+   padding: 0px ;
+   margin-right: 60px ; 
+}
+
+ 
+
+ .list a
+ {
+   width: 90px !important;
+   height: 0px !important;
+   background: url() !important;
+   height: 2px !important;
+   text-transform:none !important;
+   margin-left: 0px !important;
+   color: rgb(54, 54, 54) !important;
+
+ }
+
+ .list a:hover
+ {
+   color: #31669b !important;
+   cursor: pointer !important;
+   text-decoration: underline !important;
+
+ }
+.show{
+  visibility: visible;
+}
+
+.hide{
+  visibility: hidden; 
+}
+
+
+
 .janr{
    
     margin-top: 20px;
     min-height: 42px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
 .janr div
@@ -614,8 +681,8 @@ background: url(/images/bg.gif) repeat-x left bottom;
     padding-right: 30px;
  }
  .post_box_name {
-    color: red;
-    font-size: 20px;
+    color: #31669b;
+    font-size: 16px;
     padding: 10px;
  }
  
@@ -668,7 +735,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
 
  .film_box
  {
-    height: 400px;
+    height: 550px;
     padding: 10px;
     width: 605px;
  }
@@ -763,10 +830,12 @@ background: url(/images/bg.gif) repeat-x left bottom;
   
   .inner_news_box
   {
-    margin-left: 209px;
-    margin-top: 1px;
-    min-height: 210px;
-    padding: 10px;
+     margin-left: 150px;
+     min-height: 2px;
+     padding: 10px;
+     padding-top: 16px;
+     font-family: Arial, sans-serif;
+     font-size: 13px;
   }
   
   .inner_news_box_img
@@ -774,7 +843,13 @@ background: url(/images/bg.gif) repeat-x left bottom;
     float: left;
     margin-right: 13px;
     padding-top: 25px;
-    min-height:205px;
+    min-height:150px;
+  }
+
+  .inner_news_box_img img
+  {
+    width: 136px;
+
   }
   
   .inner_news_box .text
@@ -782,37 +857,39 @@ background: url(/images/bg.gif) repeat-x left bottom;
     word-wrap: break-word;
     width: 500px;
     color:black;
-    min-height: 185px;
+    min-height: 70px;
   }
 /* end of menu */	
-.news_box{
-    margin-bottom:40px;
-    margin-top: 5px;
-    width: 730px;
+.news_box
+{
+  margin-bottom: 20px;
+  width: 730px;
+  border-bottom: 1px solid #f3f3f3;
     
  }
  
  .post_box_name a
   {
-    color: red;
+    color: #31669b;
+    margin-left: -11px;
   }
   
   .news_menu
   {
     margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .news_box .data
   {
-     border-left: 1px dotted;
     color: gray;
-    float: right;
-    margin-right: 88px;
-    padding-left: 19px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 11px;
   }
    .new_anons_content 
    {
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px solid #e3e3e3;
     font-family: Arial;
     margin-bottom: 50px;
     padding-bottom: 60px;
@@ -832,7 +909,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
    
    .new_anons_content h1
    {
-    color: red;
+    color: #31669b;
     font-size: 31px;
     font-weight: bold;
     margin: 0 0 30px;
@@ -905,4 +982,74 @@ background: url(/images/bg.gif) repeat-x left bottom;
     .cl1
     {
       margin-left: 10px; 
+    }
+
+    .new_today_h1
+    {
+      font-size: 16px;
+      padding: 15px 0px 5px ;  
+      border-bottom: 4px solid #f3f3f3;
+    }
+
+    .news_head_h2
+    {
+      color: #404041;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 30px;
+      padding: 0px 0px 15px;
+      border-bottom: 4px solid #f3f3f3;
+    }
+
+    .news_data_head
+    {
+      margin: -28px 0px 22px 10px;
+      font-size: 12px;
+      color: grey;
+    }
+
+    .news_video
+    {
+      
+    }
+
+    .comment_reg
+    {
+      color: rgb(216, 68, 68);
+      padding: 20px;
+      background-color: rgb(241, 227, 222);
+      border: 1px solid rgb(216, 68, 68);
+      margin-top: 50px;
+      font-size: 15px;
+    }
+
+    .raitings
+    {
+       padding: 6px 5px 27px 5px;
+       background-color: rgb(211, 211, 241);
+       margin-top: 11px;
+       width: 631px;
+    }
+
+    .pagin span a
+    {
+
+        color: #363636;
+
+    }
+
+    .pagin span
+    {
+      padding: 10px;
+    }
+
+    .current{
+      color: grey;
+
+    }
+
+    .news_category_h
+    {
+      color: gray;
+      text-transform: uppercase;
     }

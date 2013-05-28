@@ -94,6 +94,7 @@ GEM
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
+    jw_player_helper (0.0.1)
     jwt (0.1.5)
       multi_json (>= 1.0)
     kaminari (0.14.1)
@@ -242,6 +243,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   jquery-rails
+  jw_player_helper
   kaminari
   launchy
   mysql2

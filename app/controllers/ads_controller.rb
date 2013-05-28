@@ -32,6 +32,7 @@ class AdsController < ApplicationController
   # POST /ads
   # POST /ads.json
   def create
+
     @ad = Ad.new(params[:ad])
 
     respond_to do |format|

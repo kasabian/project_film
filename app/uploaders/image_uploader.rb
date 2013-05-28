@@ -42,6 +42,10 @@ class ImageUploader < CarrierWave::Uploader::Base
    version :smal_image do
     process :resize_to_fill => [176,250]
    end
+
+   version :news_image do 
+    process :resize_to_fill => [136,136]
+   end 
    
    version :smal_avatar do
     process :resize_to_fill => [65,70]

@@ -1,14 +1,51 @@
+    
 <ul id="topnav" class="v1">
         <li><%=link_to 'Главная', films_path %></li>
-        <li><%=link_to 'Фильмы', kinofilms_index_path %></li>
+        <li>
+          <%=link_to 'Фильмы', kinofilms_index_path %>
+          <div class = "pod_menu ">       
+
+            <% Janr.all.each do |janr| %>
+              
+               <div class = "list"> 
+                <%= link_to janr.name, "/kinofilms/janr/#{janr.id}"%> 
+               </div>  
+            
+            <%end%>
+
+
+           </div>   
+
+        </li>
+
+
         <li><%=link_to 'Мультфильмы', cartoons_index_path %></li>
         <li><%=link_to 'Анонсы', announcements_path %></li>
-        <li><%=link_to 'Новости', news_index_path %></li>
+        <li>
+           <%=link_to 'Новости', news_index_path %>
+           <div class = "pod_menu">
+             
+              <% CategoryNews.all.each do |c| %>
+              
+               <div class = "list"> 
+                <%= link_to c.name, "/news/category/#{c.id}"%> 
+               </div>  
+            
+              <%end%>
+
+
+           </div>    
+          
+        </li>
+       
+        
+
         <% if user_signed_in? %>
-         <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete%> </li>
-         <li><%= link_to "Профиль", profil_index_path %> </li>
-         <% else %> 
-         <li><%= link_to "Войти", new_user_session_path%> </li>
+           <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete%> </li>
+           <li><%= link_to "Профиль", profil_index_path %> </li>
+        <% else %> 
+          <li><%= link_to "Войти", new_user_session_path%> </li>
         <%end%> 
+
                 
 </ul>

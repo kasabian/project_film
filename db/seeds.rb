@@ -22,6 +22,8 @@
    Role.create(:name => :user)
    Role.create(:name => :moderator)
    Role.create(:name => :other)
+
+   
    
 #    
    Janr.create(name:"биографический")
@@ -50,3 +52,20 @@
 #   
    
    Setting.create(site_name:"Онлайн кинотеатр",tegs:"фильмы, фильмы онлайн",count_page:16)
+
+
+   #
+
+
+   CategoryNews.create(name:"Euronews")
+   CategoryNews.create(name:"No Comment") 
+   CategoryNews.create(name:"Sci-Tech") 
+   CategoryNews.create(name:"Бизнес") 
+   CategoryNews.create(name:"Голливуд") 
+   CategoryNews.create(name:"Европа") 
+   CategoryNews.create(name:"Игры") 
+   CategoryNews.create(name:"Культура") 
+   CategoryNews.create(name:"Мир") 
+   CategoryNews.create(name:"Украина")
+   CategoryNews.create(name:"Финансы") 
+   CategoryNews.create(name:"Прочее")  

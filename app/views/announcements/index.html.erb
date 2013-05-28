@@ -1,6 +1,9 @@
 <h1>Анонсы</h1>
 
-<%= render "assets/news_anons", :objects => @announcements, :name_cont => "announcements"%>
+<%= render "announcements", :films => @announcements%>
+
+
+
 <%= render "assets/pagination", :films =>  @announcements%>
 
 <%if can? :create,Announcement%>

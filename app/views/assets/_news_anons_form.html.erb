@@ -19,6 +19,22 @@
     <%= f.text_field :name %>
   </div>
   
+  <% if object.class.to_s == "News" %>
+
+     <div class="field">
+        <%= f.label 'Котегория новостей' %><br />
+
+        <%= select_tag( 
+                        :category,
+                        options_for_select( get_arr_for_cotegoryNews, 
+                                            get_category_news_id(object) 
+                                          )
+                      ) 
+        %>
+
+      </div> <br /> 
+  <%end%>
+
   <div class="field">
     <%= if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end%>  <br /> <br />
     <%= f.label 'вебрать изображение' %><br />
@@ -43,9 +59,16 @@
   </div>
   
   <div class="field">
+    <%= f.label 'Ссылка для вставки видео' %><br />
+    <%= f.text_field :video%>
+  </div>
+
+  <div class="field">
     <%= f.label 'основной текст' %><br />
     <%= f.text_area :content, :size => "100x25", :class => "tinymce" %>
   </div>
+  
+
   <div class="actions">
     <%= f.submit 'Готово' %>
   </div>

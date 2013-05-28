@@ -10,14 +10,13 @@
       
     
     </div>
-    <div class = "c_other_box">
+    
       <strong> <%= comment.user.username %> </strong>
-    </div>
-    <div class = "c_other_box">
+        <div class = "c_other_box">
       <%= comment.content %>
     </div>
     
-     <div style= "width:800px;">
+     <div class = "c_menu_box">
          <div class="c_delete_box">
          <% if can? :destroy, comment %> 
          <%= link_to 'Удалить коментарий', [comment.film, comment],
@@ -27,7 +26,7 @@
             </div>
         
         <div class="c_data_box" style = "color:gray;">
-           отправлен: <%= comment.created_at %>
+           отправлен: <%= comment.created_at.to_s(:ru_datetime) %>
          </div>
      </div>
  </div> 
@@ -48,5 +47,5 @@
 
 </div>
 <%else%>
- <h1 style = "color:brown;"> Что бы иметь возможность отправлять комментарии нужно войти как зарегистрированный пользователь! </h1><br />
+ <h1 class = "comment_reg"> Что бы иметь возможность отправлять комментарии нужно войти как зарегистрированный пользователь! </h1><br />
 <%end%>

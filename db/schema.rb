@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317100703) do
+ActiveRecord::Schema.define(:version => 20130528151535) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
     t.string   "url"
     t.string   "title"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.boolean  "status"
+    t.integer  "category_ad_id"
   end
 
   create_table "announcements", :force => true do |t|
@@ -33,6 +34,19 @@ ActiveRecord::Schema.define(:version => 20130317100703) do
     t.string   "image"
     t.string   "frandly_name"
     t.integer  "user_id"
+    t.string   "video"
+  end
+
+  create_table "category_ads", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "category_news", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -78,13 +92,16 @@ ActiveRecord::Schema.define(:version => 20130317100703) do
   create_table "news", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "introtext"
     t.string   "tag"
     t.string   "image"
     t.string   "frandly_name"
     t.integer  "user_id"
+    t.string   "video"
+    t.integer  "category_ad_id"
+    t.integer  "category_news_id"
   end
 
   create_table "rates", :force => true do |t|

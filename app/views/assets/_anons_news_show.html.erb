@@ -1,19 +1,75 @@
+
+
+
+
 <div class ="new_anons_content">
-   <h1><%= object.name %></h1>
-   <%= if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end%>
+   <h2 class = "news_head_h2"><%= object.name %></h2>
+   <div class = "news_data_head"> 
+     <%= object.created_at.to_s(:ru_datetime)%>
+   </div> 
+   
    <p><%= object.content.html_safe %></p>
 </div>
 
-<%=socbutton.html_safe%> </br></br>
+
+<%if (object.video.to_s != "") then %>
+ <div class = "news_video">
+
+ 	<%= javascript_include_tag 'swfobject' %>
+
+  
+  <script type="text/javascript">
+            var flashvars_video_player = {
+                                          "bufferlength":1,"autostart":false,"file":"<%=object.video%>",
+                                          "skin":"/swf/skins/glow.zip"
+                                         },
+
+                params_video_player = {
+                                       "allowfullscreen":true,
+                                       "allowscriptaccess":"always"
+                                      },
+                attributes_video_player = {
+                                           "id":"video_player",
+                                           "name":"jw_player"
+                                          };
+
+                swfobject.embedSWF(
+                                   '/swf/player.swf',
+                                   'video_player',
+                                   '640',
+                                   '480',
+                                   '9',
+                                   'false', 
+                                   flashvars_video_player, 
+                                   {menu:"false", wmode:"opaque"}, 
+                                   params_video_player, attributes_video_player
+                                  )
+
+  </script>
+
+     <div id="video_player">Get the Adobe Flash Player to see this video.</div>
+
+
+ </div> 
+
+<%end%>
+<div>
+   <%=socbutton.html_safe%> </br></br>
+</div>
+
+
+
 
 <%if can? :update, News%>
  <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %> |
  <%= link_to 'Назад', if name_cont == "news" then "/news" else  "/announcements" end %></br>
 <%end%> 
 <br />
-  <div class = "vk_comments">
+
+
+ <div class = "vk_comments">
    <%= comment_vk.html_safe %>
-  </div>
+ </div>
  
  
  <% content_for :keywords do %>

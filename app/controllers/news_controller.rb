@@ -3,7 +3,17 @@ class NewsController < ApplicationController
   # GET /news.json
  load_and_authorize_resource
   def index
-    @news = News.all
+
+    if params[:category] != nil then
+      @category = CategoryNews.find(params[:category])
+      @news = @category.news.order("created_at DESC").all
+    else
+      @news = News.order("created_at DESC").all
+    end  
+
+    
+
+
     @news = Kaminari.paginate_array(@news).page(params[:page]).per(Setting.first.count_page)
     respond_to do |format|
       format.html # index.html.erb
@@ -43,6 +53,8 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     user = current_user
+    params[:news][:category_news_id] = params[:category]
+   
     @news = user.news.new(params[:news])
 
     respond_to do |format|
@@ -59,6 +71,8 @@ class NewsController < ApplicationController
   # PUT /news/1
   # PUT /news/1.json
   def update
+    
+    params[:news][:category_news_id] = params[:category]
     @news = News.find(params[:id])
 
     respond_to do |format|

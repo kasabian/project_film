@@ -10,6 +10,7 @@ gem 'cancan'
 gem 'mysql2'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
+gem 'jw_player_helper'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

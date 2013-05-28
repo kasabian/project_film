@@ -1,24 +1,56 @@
 
+<% 
+   show_today = false
+   show_yesterday = false
+   show_other = false
+%>
+
 <% objects.each do |object| %>
+
+
+  <%if (is_today object.created_at.to_s(:ru_datetime)) and show_today == false then %>
+     
+     <% show_today = true %>
+     <h1 class = "new_today_h1">сегодня</h1>
+
+  <%elsif (is_yesterday object.created_at.to_s(:ru_datetime)) and show_yesterday == false then %>   
+    
+     <% show_yesterday = true %>
+     <h1 class = "new_today_h1">вчера</h1>
+  
+  <%elsif (is_otherday object.created_at.to_s(:ru_datetime)) and show_other == false then %>   
+    
+     <% show_other = true %>
+     <h1 class = "new_today_h1">Остальные новости</h1>
+
+  <% end %>
+
+
+
   <div class = "news_box">   
     <div>
       <div class = "inner_news_box_img">
-        <%= link_to (if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end), 
+        <%= link_to (if object.image? then image_tag(object.image.news_image.url) else image_tag("/camera_a.gif") end), 
          if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html" end 
           %> 
       </div>
       
       <div class = "inner_news_box">
+         
          <div class = "post_box_name">
            <%= link_to object.name, if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html"end %>
-         </div>    
+         </div>
+
+         <div class = "data"> 
+            <%= object.created_at.to_s(:ru_datetime) %> 
+         </div>
+              
+         
          <div class = "text">
            <%= object.introtext.html_safe %>
          </div>
-         <div >   
-         <%= link_to "Открыть полностью",if name_cont == "news" then "/news/#{object.frandly_name}" + ".html" else  "/announcements/#{object.frandly_name}"+".html" end%>
-         <div class = "data"> отправлен: <%= object.created_at %> </div>
-         </div>
+         
+
       </div>
     </div>
     
@@ -29,7 +61,7 @@
          <%= link_to 'Удалить', object, method: :delete, data: { confirm: 'Вы уверены?' } %>
        </div>
        <%end%>
-       <%if can? :edit, object%>
+      <%if can? :edit, object%>
        <div>
         <%= link_to 'Редактировать', if name_cont == "news" then edit_news_path(object) else  edit_announcement_path(object) end %>
        </div>

@@ -1,4 +1,5 @@
 
+
  <div class="product_detail_cont">
 
      <div class="product_detail_left"><%= image_tag(@film.image.big_image.url) %></div>
@@ -56,15 +57,52 @@
 <%= render "assets/middle_baner" %>
 
 <div class = "film_box">
-  <iframe src="<%=@film.film%>" width="607" height="360" frameborder="0"></iframe> <br />
-  
-  <div style="float:right;"> <%=socbutton.html_safe%></div>
-  <div style="width:300px;">
-  <%= ratings_for @film, current_user %>
-  оценило людей: <%= @film.rates.count%> 
+  <%= javascript_include_tag 'swfobject' %>
 
-</div>
   
+  <script type="text/javascript">
+            var flashvars_video_player = {
+                                          "bufferlength":1,"autostart":false,"file":"<%=@film.film%>",
+                                          "skin":"/swf/skins/glow.zip"
+                                         },
+
+                params_video_player = {
+                                       "allowfullscreen":true,
+                                       "allowscriptaccess":"always"
+                                      },
+                attributes_video_player = {
+                                           "id":"video_player",
+                                           "name":"jw_player"
+                                          };
+
+                swfobject.embedSWF(
+                                   '/swf/player.swf',
+                                   'video_player',
+                                   '640',
+                                   '480',
+                                   '9',
+                                   'false', 
+                                   flashvars_video_player, 
+                                   {menu:"false", wmode:"opaque"}, 
+                                   params_video_player, attributes_video_player
+                                  )
+
+  </script>
+
+     <div id="video_player">Get the Adobe Flash Player to see this video.</div>
+
+
+<div class = "raitings">
+  <div style="float:right;"> <%=socbutton.html_safe%></div>
+
+  <div style="width:300px;">
+    <%= ratings_for @film, current_user %>
+     оценило людей: <%= @film.rates.count%> 
+ 
+  </div>
+  
+</div>
+
 </div>
  <%if can? :update, @film%>
  <br />
