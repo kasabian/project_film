@@ -87,6 +87,23 @@ class FilmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_cu_films
+    user = User.find(current_user.id) 
+    films = user.films
+    films_hash = Film.get_hash(films)
+   
+    render :json => films_hash     
+  end
+
+  def update_film_name
+    film = Film.find(params[:id])
+    film.name = params[:name]; 
+    film.save
+
+     head :no_content 
+
+  end  
   
   
    def rate

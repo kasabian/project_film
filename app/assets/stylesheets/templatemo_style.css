@@ -502,20 +502,21 @@ h3 {
 }
 
 .slider_nivo_wrapper{
-        width: 100%;
-	margin: 0 auto;	
-	background: black;
-	padding-top: 59px;
+     height: 255px;
+     width: 100%;
+	   margin: 0 auto;	
+	   background: black;
+	   padding-top: 59px;
 	
 	}
 
 .slider_nivo_ {
-        width: 990px;
+  width: 990px;
 	margin: 0 auto;
 	background: black;
 	text-align: right;
-	
-}
+	height: 255px;
+  }
 
 label {
   color:blue;
@@ -855,7 +856,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
   .inner_news_box .text
   {
     word-wrap: break-word;
-    width: 500px;
+    width: 710px;
     color:black;
     min-height: 70px;
   }
@@ -883,8 +884,8 @@ background: url(/images/bg.gif) repeat-x left bottom;
   .news_box .data
   {
     color: gray;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
     font-size: 11px;
   }
    .new_anons_content 
@@ -1052,4 +1053,15 @@ background: url(/images/bg.gif) repeat-x left bottom;
     {
       color: gray;
       text-transform: uppercase;
+    }
+
+
+    body, td, pre
+    {
+      font-size: 14px !important;
+    }
+
+    .hidden
+    {
+      display: none;
     }

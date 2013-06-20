@@ -11,6 +11,7 @@ gem 'mysql2'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'jw_player_helper'
+gem 'rails-backbone', '0.9.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

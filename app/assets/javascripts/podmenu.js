@@ -11,6 +11,7 @@
      }  
 
       function hidePodMenu() {
+
         if (is_visibl) {
         	is_visibl = false;
            menu.fadeOut(300);
@@ -18,9 +19,8 @@
       }
 
       function showPodMenu(el) {
-
         if (is_visibl == false) {
-           menu = $(el.toElement).parent().find(".pod_menu");
+           menu = $(el.currentTarget).find(".pod_menu");
            is_visibl = true;
            menu.fadeIn(100)
         }
@@ -37,8 +37,6 @@
          pm.init();
          $('.table-test-odd tr:odd').addClass('odd');
          $('.table-test-odd tr:even').addClass('even');
-
-        
          
 
          

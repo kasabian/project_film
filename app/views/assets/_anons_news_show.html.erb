@@ -1,7 +1,5 @@
 
 
-
-
 <div class ="new_anons_content">
    <h2 class = "news_head_h2"><%= object.name %></h2>
    <div class = "news_data_head"> 
@@ -13,9 +11,12 @@
 
 
 <%if (object.video.to_s != "") then %>
+
  <div class = "news_video">
 
- 	<%= javascript_include_tag 'swfobject' %>
+ 	<script src="/swfobject.js" type="text/javascript"></script>
+
+
 
   
   <script type="text/javascript">
@@ -53,6 +54,9 @@
  </div> 
 
 <%end%>
+<br />
+<br />
+
 <div>
    <%=socbutton.html_safe%> </br></br>
 </div>

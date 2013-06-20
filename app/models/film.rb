@@ -25,6 +25,17 @@ class Film < ActiveRecord::Base
       self.janrs << janr if params[janr.id.to_s] != nil
      end  
    end  
+
+  def self.get_hash(films)
+    films_hash = []
+
+    films.each do |film|
+      films_hash.push  name:film.name, introtext:film.introtext, id: film.id
+    end 
+     
+    films_hash
+    
+  end 
      
   def self.search(search)
     find(:all, :conditions => ['name LIKE ? ', "%#{search}%"])

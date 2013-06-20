@@ -16,6 +16,10 @@ ProjectFilm::Application.routes.draw do
      resources :setting, :slides, :ads
   end
   
+  match "films/user" => "films#get_cu_films"
+  match "films/update_name/:id" => "films#update_film_name"
+
+
   match "news/category/:category" => "news#index"
   match "/news/new" => "news#new"
   match "/news/:fn" => "news#show", :via => :get
