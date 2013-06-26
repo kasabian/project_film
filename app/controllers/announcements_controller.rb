@@ -2,9 +2,23 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
    load_and_authorize_resource
+
+  def get_announce_cu
+    user = User.find(params["id"]) 
+    announce = user.announcements
+   
+    render :json => announce 
+  end
+
   def index
-    @announcements = Announcement.all
-    @announcements = Kaminari.paginate_array(@announcements).page(params[:page]).per(Setting.first.count_page)
+    if params[:id] != nil then
+        user = User.find(params["id"]) 
+        @announcements = user.announcements
+    else      
+       @announcements = Announcement.all
+       @announcements = Kaminari.paginate_array(@announcements).page(params[:page]).per(Setting.first.count_page)
+    end  
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @announcements }

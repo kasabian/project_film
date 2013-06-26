@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528151535) do
+ActiveRecord::Schema.define(:version => 20130623164834) do
 
   create_table "ads", :force => true do |t|
     t.string   "image"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130528151535) do
     t.string   "frandly_name"
     t.integer  "user_id"
     t.string   "video"
+    t.boolean  "order"
   end
 
   create_table "category_ads", :force => true do |t|
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20130528151535) do
     t.float    "rate"
     t.float    "f_rate"
     t.integer  "user_id"
+    t.boolean  "order"
   end
 
   create_table "films_janrs", :id => false, :force => true do |t|
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20130528151535) do
     t.string   "video"
     t.integer  "category_ad_id"
     t.integer  "category_news_id"
+    t.boolean  "order"
   end
 
   create_table "rates", :force => true do |t|
@@ -165,6 +168,7 @@ ActiveRecord::Schema.define(:version => 20130528151535) do
     t.string   "username"
     t.string   "avatar"
     t.string   "url"
+    t.text     "harakter"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -4,28 +4,21 @@ class NewsController < ApplicationController
  load_and_authorize_resource
 
 
-  def get_new_cu
-    user = User.find(params["id"]) 
-    news = user.news
-   
-    render :json => news 
-  end
+
 
   def index
 
     if params[:category] != nil then
       @category = CategoryNews.find(params[:category])
       @news = @category.news.order("created_at DESC").all
-    elsif params[:id] != nil then
-      @user = User.find(params[:id])
-      @news = @user.news.all
-    else  
+    else
       @news = News.order("created_at DESC").all
     end  
 
-    @news = Kaminari.paginate_array(@news).page(params[:page]).per(Setting.first.count_page) if  params[:id] == nil
     
 
+
+    @news = Kaminari.paginate_array(@news).page(params[:page]).per(Setting.first.count_page)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news }
@@ -108,4 +101,13 @@ class NewsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+    def get_new_cu
+    
+    news = News.find_by_user_id( params["id"] );
+      
+    news = {dima:"dima"}
+    render :json => news 
+    end
+
 end

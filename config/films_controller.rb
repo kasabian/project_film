@@ -4,16 +4,8 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.json
   def index
-    
-    if params[:id] != nil then
-       @user = User.find(params[:id]) 
-       films = @user.films.all
-       @films = Film.get_hash(films)
-    else      
-      @films = Film.order("created_at DESC")
-      @films = Kaminari.paginate_array(@films).page(params[:page]).per(16)
-    end
-
+    @films = Film.order("created_at DESC")
+    @films = Kaminari.paginate_array(@films).page(params[:page]).per(16)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @films }
@@ -97,8 +89,8 @@ class FilmsController < ApplicationController
   end
 
   def get_cu_films
-    user = User.find(params["id"]) 
-    films = user.films
+
+    films = Film.where(:user_id => params["id"])
     films_hash = Film.get_hash(films)
    
     render :json => films_hash     

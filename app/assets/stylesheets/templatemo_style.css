@@ -12,8 +12,18 @@ body {
         background: #ffffff;
 }
 
-a:link, a:visited { color: gray; text-decoration: none; } 
-a:active, a:hover { color: gray; text-decoration: none; }
+
+
+
+
+a:link, a:visited { color: #999999; text-decoration: none; } 
+
+a:active, a:hover { color: #999999; text-decoration: none; }
+
+span a { color: white !important; text-decoration: none; font-family: Arial; } 
+
+span  a:hover { color: white; text-decoration: none; }
+
 
 p { margin: 0px; padding: 0px; }
 
@@ -1021,7 +1031,8 @@ background: url(/images/bg.gif) repeat-x left bottom;
       background-color: rgb(241, 227, 222);
       border: 1px solid rgb(216, 68, 68);
       margin-top: 50px;
-      font-size: 15px;
+      font-size: 13px;
+      border-radius: 5px;
     }
 
     .raitings
@@ -1030,6 +1041,7 @@ background: url(/images/bg.gif) repeat-x left bottom;
        background-color: rgb(211, 211, 241);
        margin-top: 11px;
        width: 631px;
+       border-radius: 5px;
     }
 
     .pagin span a

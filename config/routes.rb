@@ -1,7 +1,16 @@
 ProjectFilm::Application.routes.draw do
 
-    
+  match "films/user/:id" => "films#get_cu_films"
+  match "films/update_order/:id" => "films#update_film_order"
+
+  match "/unews" => "news#get_new_cu"
+  match "announcements/user" => "announcements#get_announce_cu"
   
+  match "user/harakter" => "users#get_harakter", :via => :get
+  match "user/harakter/:id" => "users#set_harakter", :via => :put  
+  
+
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   get "omniauth_callbacks/facebook"
@@ -16,8 +25,7 @@ ProjectFilm::Application.routes.draw do
      resources :setting, :slides, :ads
   end
   
-  match "films/user" => "films#get_cu_films"
-  match "films/update_name/:id" => "films#update_film_name"
+ 
 
 
   match "news/category/:category" => "news#index"

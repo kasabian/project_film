@@ -1,29 +1,47 @@
 
-<h3>Добавленный контент</h3>
 
-<div id = "user_films_show" >
+<script>
+  window.this_page_user_id = <%= @user.id%>;
+
+  $(function() {
+
+      var  user_cost_film = new FilmsCostView({el: $("#user_films_cost")});
+           user_cost_news = new NewsCView({el: $("#user_news_cost")}),
+           user_cost_announce = new AnnouncesCostView({el: $("#user_announce_cost")}),
+           user_form_view = new UserFormView({model: new UserFormModel(), el: $("#user_harakter")});
+           
+          
+
+  })
+
+</script>
+
+
+<h2>Добавленный контент</h2>
+
+ <div id = "user_films_cost" >
   
 </div>
 
 
-<b>Фильмы</b><br>
-  <%@user.films.each do |film|%>
-    
-    Название: <%= link_to film.name, film_path(film) %>
-    <br />
+ <div id = "user_news_cost" >
   
-  <%end%>
+</div>
 
-<b>Новости</b></br>
-  <%@user.news.each do |new|%>
-   Название: <%= link_to new.name, news_path(new) %>
-   <br />
-  <%end%>
-<b>Анонсы</b></br>
+ <div id = "user_announce_cost" >
+  
+</div>
 
- <%@user.announcements.each do |a|%>
-   Название: <%= link_to a.name, announcement_path(a) %>
-   <br />
-  <%end%>
+<br />
+<br />
+<br />
 
+ <div id = "user_harakter">
+
+ </div>	
+
+<br />
+<br />
+<br />
+<br />
 

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   
   validates :username, :uniqueness => true
-  attr_accessible :login, :username,:email, :password, :password_confirmation, :remember_me, :avatar,:avatar_cache,:url
+  attr_accessible :login, :username,:email, :password, :password_confirmation, :remember_me, :avatar,:avatar_cache,:url, :harakter
   attr_accessor :login
   validates :username, :presence => true,
                       :length => { :minimum => 3}

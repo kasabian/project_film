@@ -2,43 +2,42 @@
  <%= form_for(setting) do |f| %> 
  
   <div class="field">
-    <%= f.label 'Название сайта' %><br />
-    <%= f.text_field :site_name %>
-  </div> <br />
+    <%= f.label 'Название сайта' %>
+    <%= f.text_field :site_name, class:"input-xlarge" %>
+  </div> 
 
   
    <div class="field">
-    <%= f.label 'Теги' %><br />
-    <%= f.text_field :tegs %>
-  </div> <br />
+    <%= f.label 'Теги' %>
+    <%= f.text_field :tegs, class:"input-xlarge" %>
+  </div> 
   
    <div class="field">
     <%= f.label 'Количество фильмов на странице (только числовые значения)' %><br />
-    <%= f.text_field :count_page %>
-  </div> <br />
+    <%= f.text_field :count_page, class:"input-xlarge" %>
+  </div> 
   
   <div class="field">
-    <%= f.label 'Код виджета вконтакте' %><br />
-    <%= f.text_area :vidjet %>
-  </div> <br />
+    <%= f.label 'Код виджета вконтакте' %>
+    <%= f.text_area :vidjet, class:"input-xlarge" %>
+  </div> 
   
   <div class="field">
-    <%= f.label 'Код счетчиков' %><br />
-    <%= f.text_area :counter %>
-  </div> <br />
+    <%= f.label 'Код счетчиков' %>
+    <%= f.text_area :counter, class:"input-xlarge" %>
+  </div> 
    <div class="field">
-    <%= f.label 'Код соц кнопок' %><br />
-    <%= f.text_area :socbutton %>
-  </div> <br />
-  
+    <%= f.label 'Код соц кнопок' %>
+    <%= f.text_area :socbutton, class:"input-xlarge" %>
+  </div> 
   <div class="field">
-    <%= f.label 'Код для коментариев ВК' %><br />
-    <%= f.text_area :commentvk %>
-  </div> <br />
+    <%= f.label 'Код для коментариев ВК' %>
+    <%= f.text_area :commentvk, class:"input-xlarge" %>
+  </div> 
   
   
 
   <div class="actions">
-    <%= f.submit "Применить" %>
+    <%= f.submit "Применить", class:"btn btn-inverse" %>
   </div>
 <% end %>

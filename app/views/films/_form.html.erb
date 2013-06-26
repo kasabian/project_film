@@ -16,7 +16,7 @@
   <% end %>
   
    <div class="field">
-    <%= f.label 'Тип контента' %><br />
+    <%= f.label 'Тип контента' %>
     <%= select(:film, :film_type, options_for_select([["Фильм", 'films'], ["Мультфильм", 'cartoons']], type)) %>
   </div> <br />
 
@@ -27,65 +27,68 @@
         <%= f.hidden_field :image_cache %> 
        
   <div class="field">
-    <%= f.label 'Название' %><br />
+    <%= f.label 'Название' %>
     <%= f.text_field :name %>
   </div>
   
   <div class="field">
-    <%= f.label 'Теги' %><br />
+    <%= f.label 'Теги' %>
     <%= f.text_field :tag %>
   </div>
   
    <div class="field">
-    <%= f.label 'латинское имя для url' %><br />
+    <%= f.label 'латинское имя для url' %>
     <%= f.text_field :frendlyname %>
   </div>
    
   <div class = "field">
-   <%= label_tag("Жанры") %> <br />
+   <%= label_tag("Жанры") %> 
     <%Janr.all.each do |janr|%>
+
+      <label class="checkbox"> 
        <%= if @film.janrs.include? janr then
              check_box_tag(janr.id,janr.id,"checked")
            else 
              check_box_tag(janr.id,janr.id)
            end
        %>
-       <%= label_tag(janr.id,janr.name) %> <br />
+       <%= janr.name %> 
+     </label><br / >
     <%end%>
   </div>
   
   <div class="field">
-    <%= f.label 'Страна' %><br />
+    <%= f.label 'Страна' %>
     <%= f.text_field :country %>
   </div>
   
    <div class="field">
-    <%= f.label 'Режиссер' %><br />
+    <%= f.label 'Режиссер' %>
     <%= f.text_field :directed_by %>
   </div>
    
   <div class="field">
-    <%= f.label 'Год выпуска' %><br />
+    <%= f.label 'Год выпуска' %>
     <%= f.number_field :year %>
   </div>
   <div class="field">
-    <%= f.label 'Описание' %><br />
-    <%= f.text_area :introtext, :class => "tinymce", :rows => 40, :cols => 120  %>
+    <%= f.label 'Описание' %>
+    <%= f.text_area :introtext, :class => "tinymce input-xxlarge", :rows => 20, :cols => 500 %>
   </div>
   <div class="field">
-    <%= f.label 'Главная роль' %><br />
+    <%= f.label 'Главная роль' %>
     <%= f.text_field :role %>
   </div>
   <div class="field">
-    <%= f.label 'Длина фильма' %><br />
+    <%= f.label 'Длина фильма' %>
     <%= f.text_field :length %>
   </div>
   <div class="field">
-    <%= f.label 'Сылка на фильм' %><br />
-    <%= f.text_area :film %>
+    <%= f.label 'Сылка на фильм' %>
+    <%= f.text_area :film, :size => "100x5", class:"input-xxlarge" %>
   </div><br /> 
 
   <div class="actions">
-    <%= f.submit "Применить" %>
+    <%= f.submit "Применить", class:"btn btn-inverse" %>
   </div>
 <% end %>

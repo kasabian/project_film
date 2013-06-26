@@ -15,14 +15,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'имя' %><br />
+    <%= f.label 'имя' %>
     <%= f.text_field :name %>
   </div>
   
   <% if object.class.to_s == "News" %>
 
      <div class="field">
-        <%= f.label 'Котегория новостей' %><br />
+        <%= f.label 'Котегория новостей' %>
 
         <%= select_tag( 
                         :category,
@@ -37,39 +37,39 @@
 
   <div class="field">
     <%= if object.image? then image_tag(object.image.smal_image.url) else image_tag("/camera_a.gif") end%>  <br /> <br />
-    <%= f.label 'вебрать изображение' %><br />
+    <%= f.label 'вебрать изображение' %>
     <%= f.file_field :image, :length => 5 %>
     <%= f.hidden_field :image_cache %> 
   <div>       
          
          
   <div class="field">
-    <%= f.label 'интротекст (максимум 255 символов)' %><br />
-    <%= f.text_area :introtext, :size => "100x3" %>
+    <%= f.label 'интротекст (максимум 255 символов)' %>
+    <%= f.text_area :introtext, class:"input-xxlarge", size:"100x3" %>
   </div>
   
    <div class="field">
-    <%= f.label 'теги (вводить через запятую)' %><br />
+    <%= f.label 'теги (вводить через запятую)' %>
     <%= f.text_field :tag%>
   </div>
   
   <div class="field">
-    <%= f.label 'латинское имя для url (frandly_name)' %><br />
+    <%= f.label 'латинское имя для url (frandly_name)' %>
     <%= f.text_field :frandly_name%>
   </div>
   
   <div class="field">
-    <%= f.label 'Ссылка для вставки видео' %><br />
-    <%= f.text_field :video%>
+    <%= f.label 'Ссылка для вставки видео' %>
+    <%= f.text_field :video, class:"input-xxlarge"%>
   </div>
 
   <div class="field">
-    <%= f.label 'основной текст' %><br />
-    <%= f.text_area :content, :size => "100x25", :class => "tinymce" %>
+    <%= f.label 'основной текст' %>
+    <%= f.text_area :content, :size => "100x25", :class => "tinymce input-xxlarge" %>
   </div>
   
 
-  <div class="actions">
-    <%= f.submit 'Готово' %>
+  <div class="actions"><br />
+    <%= f.submit 'Готово', class:"btn btn-inverse" %>
   </div>
 <% end %>

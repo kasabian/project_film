@@ -37,8 +37,8 @@
  <% if can? :create, Comment then%>
  <%= form_for([film, film.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label 'Добавить коментарий', :style => "color:black;" %><br />
-    <%= f.text_area :content, :size => "100x5" %>
+    <%= f.label 'Добавить коментарий', :style => "color:black;" %>
+    <%= f.text_area :content, :size => "100x5", class:"input-xxlarge" %>
   </div>
   <div class="actions">
    <%= f.submit 'готово',:class => "s" %>
